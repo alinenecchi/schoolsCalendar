@@ -16,21 +16,21 @@ $size-title: 3.8rem;
 }
 
 @mixin phone {
-  @media (max-width: $mobileLimit - 1) { @content; }
+  @media (max-width: ($mobileLimit - 1)) { @content; }
 }
 @mixin gt-phone {
   @media (min-width: $mobileLimit) { @content; }
 }
 
 @mixin tablet {
-  @media (min-width: $mobileLimit) and (max-width: $tabletLimit - 1) { @content; }
+  @media (min-width: $mobileLimit) and (max-width: ($tabletLimit - 1)) { @content; }
 }
 @mixin gt-tablet {
   @media (min-width: $tabletLimit) { @content; }
 }
 
 @mixin desktop {
-  @media (min-width: $tabletLimit) and (max-width: $desktopLimit - 1) { @content; }
+  @media (min-width: $tabletLimit) and (max-width: ($desktopLimit - 1)) { @content; }
 }
 @mixin gt-desktop {
   @media (min-width: $desktopLimit) { @content; }
