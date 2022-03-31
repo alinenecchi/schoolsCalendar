@@ -3,13 +3,14 @@
 
 .page__home-container {
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
 
-  .section-hero {
-    margin-bottom: 5rem;
+  .title {
+    display: flex;
+    justify-content: center;
   }
 
 
