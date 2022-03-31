@@ -1,0 +1,46 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.atom__section-container {
+  position: relative;
+  display: flex;
+  grid-template-columns: auto;
+  width: 100%;
+  margin: 2rem;
+  height: 100%;
+
+  .left-el {
+    display: none;
+    flex-grow: 1;
+  }
+
+  .center-el {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .right-el {
+    display: none;
+    flex-grow: 1;
+  }
+
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+  @include gt-phone {
+
+    .left-el {
+      display: block;
+    }
+  
+    .center-el {
+      max-width: $section-max-width;
+      //overflow-x: unset;
+    }
+    
+    .right-el {
+      display: block;
+      z-index: 0;
+    }
+  }
+}
