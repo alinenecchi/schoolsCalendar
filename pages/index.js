@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/molecules/navbar';
 import Title from '../components/atoms/title';
 import css from '../utils/styles/home.module.scss';
+import NewNav from "../components/molecules/navbar-new";
 
 export default function Home(props) {
 
@@ -17,9 +18,7 @@ export default function Home(props) {
     {...other}
   >
 
-    <div className="stars" ></div>
-    <div className="stars2" ></div>
-    <div className="stars3" ></div>
+<NewNav />
     
     <div className={css["title"]}>
       <Title> Hello SchollsCalendar</Title>

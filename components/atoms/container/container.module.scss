@@ -1,0 +1,15 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.container-main {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@include gt-phone {
+  .container-main {
+    width: 100%;
+    padding: 0;
+  }
+}
