@@ -1,0 +1,97 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.molecule__hero-container {
+  position: relative;
+  width: 100vw;
+  align-items: center;
+
+  .bg-image {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    z-index: 1;
+    top: 0;
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    position: relative;
+    z-index: 2;
+    color: $color-primary-5;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+
+    .content-container {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .logo-container {
+      margin-bottom: 1rem;
+
+      svg {
+        max-width: 400px;
+      }
+    }
+
+    .content-text {
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+  @include gt-phone {
+    height: 32rem;
+    
+    .content {
+      font-size: 2.125rem;
+      line-height: 2.5rem;
+      //transform: translateX(-15%);
+      //width: unset;
+      justify-content: center;
+      padding-left: 0;
+      padding-top: 0;
+
+      .content-container {
+        padding-left: 2.5rem;
+      }
+    }
+
+    .logo-container {
+      margin-bottom: 1rem;
+
+      svg {
+        max-width: 200px;
+      }
+    }
+  }
+
+  @include gt-tablet {
+
+    .content {
+      padding-left: 0;
+      padding-top: 0;
+      margin: auto;
+    }
+  }
+}

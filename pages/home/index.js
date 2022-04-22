@@ -1,6 +1,6 @@
 import React from 'react';
 import Title from '../../components/atoms/title';
-import css from '../../utils/styles/home.module.scss';
+import css from './home.module.scss';
 
 export default function Home(props) {
 

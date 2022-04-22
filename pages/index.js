@@ -1,7 +1,10 @@
 import React from 'react';
-import Button from '../components/atoms/button';
+import * as pageData from 'data/main';
+import Hero from 'components/molecules/hero';
+import ButtonHorizontal from 'components/molecules/button-horizontal';
 import Title from '../components/atoms/title';
-import css from '../utils/styles/home.module.scss';
+import { hitEvent } from 'utils/metrics';
+import css from './index.module.scss';
 
 export default function Home(props) {
 
@@ -16,6 +19,13 @@ export default function Home(props) {
     className={`${css['page__home-container']} ${className}`}
     {...other}
   >
+    <Hero
+      className={css.hero}
+      image="/images/banner-hero.png"
+    >
+        
+      <div  className={css.mainText}> {pageData.mainText}<br/></div>
+    </Hero>
 
     <div className={css["title"]}>
       <Title> Hello SchollsCalendar</Title>
