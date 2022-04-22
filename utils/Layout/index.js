@@ -79,13 +79,6 @@ const Layout = ({ children }) => {
                     fbq('track', 'PageView');
                 `}} />
 
-                <noscript>
-                  <img
-                    height="1"
-                    width="1"
-                    src="https://www.facebook.com/tr?id=541541827257348&ev=PageView&noscript=1"
-                  />
-                </noscript>
                 {/* End Facebook Pixel Code */}
               </>
             )
@@ -95,9 +88,9 @@ const Layout = ({ children }) => {
         <link rel="stylesheet" href="/carousel.css" type="text/css" />
       </Head>
       <HeaderNav
-        flex={router.pathname.startsWith('/one-personal')}
-        portal={router.pathname === '/one-fleet'}
-        reserve={router.pathname === '/share'}
+        home={router.pathname.startsWith('/home')}
+        contato={router.pathname === '/contact'}
+        quem-somos={router.pathname === '/who-we-are'}
       />
       <Transition location={router.pathname}>
         <main className={css["main"]}>

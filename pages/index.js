@@ -19,7 +19,6 @@ export default function Home(props) {
 
     <div className={css["title"]}>
       <Title> Hello SchollsCalendar</Title>
-      <Button>Button</Button>
     </div>
   </div>;
 }

@@ -6,9 +6,10 @@
   top: 0;
   height: 4.5rem;
   width: 100%;
-  color: $primary-brand-blue;
-  //border-bottom: solid 1px;
+  color: $white;
+  background: $color-dark-background-5;
   z-index: 9999;
+  padding: 1rem;
 
   .open-container {
     display: none;
@@ -24,7 +25,6 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    background: #fff;
   
 
     .logo {
@@ -187,7 +187,7 @@
    *      RESPONSIVITY (media queries)      *
    ******************************************/
   @include gt-phone {
-    background-color: #fffe;
+    background: $color-dark-background-5;
     .navbar-container {
       .logo {
         width: auto;

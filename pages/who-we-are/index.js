@@ -16,7 +16,7 @@ export default function WhoWeAre(props) {
     {...other}
   >
     <div className={css["title"]}>
-      <Title>     quem somos</Title>
+      <Title>Quem somos</Title>
     </div>
   </div>;
 }
