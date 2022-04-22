@@ -1,7 +1,6 @@
 import React from 'react';
 import App from 'next/app';
 import Layout from '../utils/Layout';
-import { throttle, debounce } from 'utils/functions';
 import { PageProvider, PageContext } from 'providers/page';
 import packageJson from '../package.json';
 import 'utils/styles/_reset.scss';
