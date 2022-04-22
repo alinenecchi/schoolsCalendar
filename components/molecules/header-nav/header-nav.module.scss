@@ -8,6 +8,7 @@
   width: 100%;
   color: $white;
   background: $color-dark-background-5;
+  //background-color: transparent;
   z-index: 9999;
   padding: 1rem;
 
@@ -181,6 +182,10 @@
         order: 2;
       }
     }
+  }
+
+  &[data-style="dark"] {
+    background: $color-dark-background-5;
   }
 
   /******************************************

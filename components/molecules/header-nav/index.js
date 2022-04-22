@@ -18,6 +18,7 @@ function HeaderNav (props) {
   const {
     className = "",
     children,
+    style,
     one = true,
     flex = true,
     login = true,
@@ -51,6 +52,7 @@ function HeaderNav (props) {
     <div
       className={`${css["molecule__header-nav-container"]} ${className}`}
       data-menu-open={menuOpen ? 1 : null}
+      data-style={style}
       {...other}
     >
       <div className={css["navbar-container"]} data-content-wrapper>

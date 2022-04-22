@@ -3,11 +3,11 @@
 
 .atom__title-container {
   position: relative;
+  // TODO: add default styles (usually focused on phones)
 
-  &[data-style="title"] {
-    font-size: $size-title;
-  }
-  
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
   @include gt-phone {
     // TODO: add specifications for devices that are greater than phones
     // example: .content { ... }

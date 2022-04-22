@@ -1,8 +1,14 @@
-@import '_colors';
-@import '_mixins';
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
 
 .page__home-container {
   position: relative;
+  display: flex;
+  flex-direction: center;
+  flex-direction: column;
+  justify-content: center;
+  
 
 
   @include gt-phone {
