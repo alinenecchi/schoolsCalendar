@@ -32,6 +32,9 @@ function NavBar(props) {
           <Link href={"/"}>
             <a className={css["nav-link"]}>home</a>
           </Link>
+          <Link href={"/home"}>
+            <a className={css["nav-link"]}>qualquer</a>
+          </Link>
         </div>
       </div>
     </Container>
