@@ -1,0 +1,13 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.page__who-we-are-container{
+  position: relative;
+
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+  @include gt-phone {
+  
+  }
+}

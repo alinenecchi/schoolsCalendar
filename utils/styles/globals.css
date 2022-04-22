@@ -1,0 +1,16 @@
+.App {
+  background-color: "#000";
+  color: "#fff";
+  height: 100%;
+}
+
+body {
+  color: "#fff";
+  font-family: "Open Sans";
+  background: rgb(54, 87, 148);
+  background: radial-gradient(
+    circle,
+    rgba(54, 87, 148, 1) 0%,
+    rgba(50, 64, 119, 1) 100%
+  );
+}

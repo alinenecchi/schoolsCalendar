@@ -1,0 +1,98 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+
+  scroll-behavior: smooth;
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-smoothing: antialiased;
+  webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
+
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  height: 100%;
+}
+
+svg {
+  fill: currentColor;
+
+  path {
+    fill: currentColor;
+  }
+  // stroke: currentColor;
+}
+
+h1 {
+  font-size: 2.125rem;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 28px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 1.125rem;
+  line-height: 28px;
+  font-weight: normal;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.fade-exit {
+  display: none;
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@import './grid-system.scss';
+@import './_fonts.scss';
