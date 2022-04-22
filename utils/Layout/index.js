@@ -1,9 +1,9 @@
 import React from "react";
 import { useRouter } from "next/router" ;
 import Head from 'next/head';
-import HeaderNav from 'components/molecules/header-nav';
+import HeaderNav from '../../components/molecules/header-nav';
 import Transition from "./transition" ;
-import ButtonHorizontal from 'components/molecules/button-horizontal';
+import ButtonHorizontal from '../../components/molecules/button-horizontal';
 import css from './layout.module.scss';
 // import "./index.scss";
 
