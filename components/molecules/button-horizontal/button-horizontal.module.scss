@@ -49,6 +49,25 @@
     }
   }
 
+  &[data-style="orange"] {
+    background-color: #FF6551;
+    ;
+    border: none;
+
+    &:hover {
+      background-color: darken(#FF6551, 10%);
+    }
+
+    span {
+      color: $color-dark-text;
+    }
+
+    .arrowRight {
+      border-top: $color-dark-text 1px solid;
+      border-right: $color-dark-text 1px solid;
+    }
+  }
+
   &[data-style="white"] {
     background-color: $color-primary-3;
     border: none;

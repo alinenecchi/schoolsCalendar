@@ -109,7 +109,7 @@ const Layout = ({ children }) => {
               <div className={css["btn-container"]}>
                 <ButtonHorizontal
                   className={css["btn"]}
-                  style="blue"
+                  style="orange"
                   onClick={event => {
                     setIsCookieConsented('ok');
                     window.localStorage.setItem('hasCookieConsent', 'ok');
