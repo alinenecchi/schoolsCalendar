@@ -4,3 +4,4 @@ export { default as ArrowRight } from './ArrowRight';
 export { default as PlayArrow} from './PlayArrow';
 export { default as Menu} from './Menu';
 export { default as Close} from './Close';
+export { default as ChevronRight} from './ChevronRight';

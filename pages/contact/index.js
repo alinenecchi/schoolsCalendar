@@ -1,8 +1,8 @@
 import React from 'react';
 import Title from '../../components/atoms/title';
-import css from '../../utils/styles/home.module.scss';
+import css from './contact.module.scss';
 
-export default function Home(props) {
+export default function Contact(props) {
 
   const {
     className = "",
@@ -12,11 +12,11 @@ export default function Home(props) {
   } = props;
    
   return <div
-    className={`${css['page__home-container']} ${className}`}
+    className={`${css['page__contact-container']} ${className}`}
     {...other}
-  >    
+  >
     <div className={css["title"]}>
-      <Title> Hello </Title>
+      <Title> Contato </Title>
     </div>
   </div>;
 }

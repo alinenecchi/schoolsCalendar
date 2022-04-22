@@ -1,0 +1,131 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.molecule__button-horizontal-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  padding: .7rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  
+  &[disabled] {
+    opacity: .5;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  span {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .arrowRight {
+    height: .9rem;
+    width: .9rem;
+    transform: rotate(45deg);
+  }
+
+  &[data-style="blue"] {
+    background-color: $color-primary-1;
+    border: none;
+
+    &:hover {
+      background-color: darken($color-primary-1, 10%);
+    }
+
+    span {
+      color: $color-dark-text;
+    }
+
+    .arrowRight {
+      border-top: $color-dark-text 1px solid;
+      border-right: $color-dark-text 1px solid;
+    }
+  }
+
+  &[data-style="white"] {
+    background-color: $color-primary-3;
+    border: none;
+
+    &:hover {
+      background-color: darken($color-primary-3, 10%);
+    }
+
+    span {
+      color: $color-primary-1;
+    }
+
+    .arrowRight {
+      border-top: $color-primary-1 1px solid;
+      border-right: $color-primary-1 1px solid;
+    }
+  }
+
+  &[data-style="outline"] {
+    background-color: $color-primary-3;
+    border: $color-primary-1 1px solid;
+
+    &:hover {
+      background-color: darken($color-primary-3, 10%);
+    }
+
+    span {
+      color: $color-primary-1;
+    }
+
+    .arrowRight {
+      border-top: $color-primary-1 1px solid;
+      border-right: $color-primary-1 1px solid;
+    }
+  }
+
+  &[data-style="button"] {
+    background-color: $color-primary-1;
+    border: none;
+    max-width: 112px;
+    max-height: 48px;
+
+    &:hover {
+      background-color: darken($color-primary-1, 10%);
+    }
+
+    span {
+      color: $color-dark-text;
+      font-size: 16px;
+    }
+
+    .arrowRight {
+      display: none;
+    }
+  }
+
+  &[data-style="map"] {
+    background-color: $color-primary-1;
+    border: $white 2px solid;
+
+    &:hover {
+      background-color: darken($color-primary-1, 1%);
+    }
+
+    span {
+      color: $white ;
+    }
+
+    .arrowRight {
+      border-top: $white 1px solid;
+      border-right: $white 1px solid;
+    }
+  }
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+  @include gt-phone {
+    width: 17rem;
+  }
+}

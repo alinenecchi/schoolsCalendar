@@ -1,0 +1,56 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.molecule__sub-menu-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  margin-top: 1rem;
+  left: 0;
+  color: $color-primary-1;
+  width: 80%;
+  height: 72px;
+
+  &:after{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid $white;
+    top: 0px;
+    left: 1rem;
+  }
+  
+ 
+  a{
+    text-decoration: none;
+  }
+
+  @include gt-phone {
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: $color-primary-1;
+    color: $white;
+    margin-top: 0;
+    width: 100%;
+    top: 4.5rem;
+
+    &:after{
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid $white;
+      top: 0px;
+      left: 13rem;
+    }
+  }
+}

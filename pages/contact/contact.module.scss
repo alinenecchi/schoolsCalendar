@@ -1,0 +1,13 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.page__contact-container {
+  position: relative;
+
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+  @include gt-phone {
+  
+  }
+}

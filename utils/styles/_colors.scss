@@ -14,79 +14,111 @@ $grey-dark-mode: rgba(66, 66, 66, 0.712);
 $white-text: #fff;
 $primary:rgb(0, 132, 255);
 
+$gray-gray-2: #38434b;
+$gray-gray-3: #59646d;
+$gray-gray-4: #a6acb0;
+$gray-gray-5: #d4d7d9;
+$gray-gray-6: #ebeced;
+$secondary-blue-2: #002732;
+$secondary-blue-3: #00495c;
+$secondary-blue-4: #04a4b6;
+$secondary-blue-5: #a6cdd7;
+$secondary-blue-6: #ebf4f6;
+
 // theme/colors
 
 // texts
 $color-text: #222;
 // Background
-$color-background-1: #365794;
-$color-background-2: #FFFFFF;
-$color-background-3: #FBFBFB;
-$color-background-linear: linear-gradient(0, #120c56, #000000);
+$color-background-1: #ffffff;
+$color-background-2: #F2F2F2;
+$color-background-3: #fbfbfb;
 // base
-$color-base-1: #222222;
-$color-base-2: #494949;
-$color-base-3: #949390;
-$color-base-4: #ACABA7;
-$color-base-5: #CFCECA;
-$color-base-6: #E4E3DF;
+$color-base-1: #38434b;
+$color-base-2: #59646d;
+$color-base-3: #a6acb0;
+$color-base-4: #d4d7d9;
+$color-base-5: #ebeced;
+$color-base-6: $white;
 // primary
-$color-primary-1: #fff;
-$color-primary-2: #4D2A74;
-$color-primary-3: #7E5DA3;
-$color-primary-4: #BB6BD9;
-$color-primary-5: #CCCCFF;
+$color-primary-0: #00708d44; // almost transparent
+$color-primary-1: #00708d;
+$color-primary-fade: #00708dbb; // a little fade out
+$primary-brand-blue: $color-primary-1;
+$color-primary-2: #00708d99; // with transparency
+$color-primary-3: #F5F5F6;
+$color-primary-4: #fff;
+$color-primary-5: #fff;
 // secondary
-$color-secondary-1: #365794ff;
-$color-secondary-2: #4a6fb4;
-$color-secondary-3: #36579499;
-$color-secondary-4: #2B3968;
-$color-secondary-5: rgb(99, 147, 235);
+$color-secondary-1: #ebf4f6;
+$color-secondary-2: #002732;
+$color-secondary-3: #00495c;
+$color-secondary-4: #04a4b6;
+$color-secondary-5: #a6cdd7;
+$color-secondary-6: #ebf4f6;
+$color-secondary-7: #59a2b5;
 // warning
-$color-warning: #FFD336;
+$color-warning: #ffd336;
 // danger
-$color-danger: #DE323C;
-$color-danger-translucent: rgba(255, 0, 13, 0.06);
+$color-danger: #dd7208;
+$color-danger-translucent: #dd720899;
 // success
-$color-success-1: #A2DD00;
-$color-success-2: #CDFD4A;
-
+$color-success-1: #008849;
+$color-success-2: #00884999;
 
 // DARK MODE
 // texts
-$color-dark-text: #FFFFFF;
+$color-dark-text: #ffffff;
 // Background
-$color-dark-background-1: #1B212D;
+$color-dark-background-1: #1b212d;
 $color-dark-background-2: #212733;
-$color-dark-background-3: #1B212D;
+$color-dark-background-3: #1b212d;
+$color-dark-background-4: #E5E5E5;
 // base
-$color-dark-base-1: #F2F2F2;
-$color-dark-base-2: #CFCECA;
-$color-dark-base-3: #7C818B;
-$color-dark-base-4: #636A79;
-$color-dark-base-5: #3D4454;
-$color-dark-base-6: #2A303D;
+$color-dark-base-1: #f2f2f2;
+$color-dark-base-2: #cfceca;
+$color-dark-base-3: #7c818b;
+$color-dark-base-4: #636a79;
+$color-dark-base-5: #3d4454;
+$color-dark-base-6: #2a303d;
 // primary
-$color-dark-primary-1: #3B1E5A;
-$color-dark-primary-2: #4D2A74;
-$color-dark-primary-3: #7E5DA3;
-$color-dark-primary-4: #BB6BD9;
-$color-dark-primary-5: #CCCCFF;
+$color-dark-primary-1: #3b1e5a;
+$color-dark-primary-2: #4d2a74;
+$color-dark-primary-3: #7e5da3;
+$color-dark-primary-4: #bb6bd9;
+$color-dark-primary-5: #ccccff;
 // secondary
-$color-dark-secondary-1: #119EDB;
-$color-dark-secondary-2: #23CDFD;
-$color-dark-secondary-3: #67DEFF;
-$color-dark-secondary-4: #99E9FF;
-$color-dark-secondary-5: #C4F2FF;
-$color-dark-secondary-6: #ddf5fc;
+$color-dark-secondary-1: #119edb;
+$color-dark-secondary-2: #23cdfd;
+$color-dark-secondary-3: #67deff;
+$color-dark-secondary-4: #99e9ff;
+$color-dark-secondary-5: #c4f2ff;
+$color-dark-secondary-6: #CDE4EA;
+$color-dark-secondary-7: #A6CDD7;
 // Warning
-$color-dark-warning: #FFD336;
+$color-dark-warning: #ffd336;
 // danger
-$color-dark-danger: #DE323C;
+$color-dark-danger: #de323c;
 $color-dark-danger-translucent: rgba(255, 0, 13, 0.06);
 // success
-$color-dark-success-1: #A2DD00;
-$color-dark-success-2: #CDFD4A;
+$color-dark-success-1: #a2dd00;
+$color-dark-success-2: #cdfd4a;
+
+// gradients
+$gradient-brand: linear-gradient(to top, $primary-brand-blue 30%, rgba(0, 0, 0, 0.1));
+$gradient-brand-light: linear-gradient(to top, $color-primary-2 0%, $color-primary-0);
+$gradient-blue: linear-gradiente( #00708d, 12,89%, #00a800 104.73%);
+$gradient-gray: linear-gradiente( 359.71deg, #59646d 26.18%, rgba(56, 67, 75,0.33) 65.64%, rgba(0, 0, 0, 0.12)88.13%);
+
+$color-blue-background-1: #EBF4F6;
+$color-pearly-red: #AA0000;
+$color-pearly-dark: #0A0A0A;
+$color-pearly-gray: #BDBDBD;
+$color-pearly-blue: #0D1FBE;
+$color-pearly-beige: #FFEFD0;
+$color-blue-gradiente-1: linear-gradient(359.71deg, #00708D 26.18%, rgba(1, 112, 141, 0.33) 65.64%, rgba(0, 0, 0, 0.12) 88.13%);
+$color-blue-gradiente-2: linear-gradient(265.33deg, #59a2b5 0%, #00708d 100%);
+
 
 
 
