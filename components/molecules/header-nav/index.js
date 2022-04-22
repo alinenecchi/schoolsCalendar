@@ -62,7 +62,7 @@ function HeaderNav (props) {
         <div className={css["menu-container"]}>
 
           <Link href="/who-we-are">
-            <a href="/who-we-are"
+            <a
               onClick={clicked('menu-quem-somos')}
               data-selected={router.pathname === '/who-we-are' ? 1 : null}
               style={{order: 1}}
