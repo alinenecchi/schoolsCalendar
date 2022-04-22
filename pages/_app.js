@@ -1,7 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import Layout from '../utils/Layout';
-import { PageProvider, PageContext } from 'providers/page';
+import { PageProvider, PageContext } from '../providers/page';
 import packageJson from '../package.json';
 import 'utils/styles/_reset.scss';
 import 'utils/styles/_fonts.scss';
