@@ -1,9 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import SubMenu from '../sub-menu';
-import MenuIcon from 'components/icons/Menu';
-import CloseIcon from 'components/icons/Close';
-import ArrowRight from 'components/icons/ChevronRight';
+import MenuIcon from '../../icons/Menu';
+import CloseIcon from '../../icons/Close';
+import ArrowRight from '../../icons/ChevronRight';
 import Link from 'next/link';
 // loading the sass style fot the component
 import css from './header-nav.module.scss';
