@@ -1,5 +1,5 @@
 import React from 'react';
-import * as pageData from 'data/main';
+import * as pageData from '../data/main';
 import Hero from 'components/molecules/hero';
 import Title from 'components/atoms/title';
 import css from 'utils/styles/home.module.scss';
