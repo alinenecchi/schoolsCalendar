@@ -1,10 +1,8 @@
 import React from 'react';
 import * as pageData from 'data/main';
 import Hero from 'components/molecules/hero';
-import ButtonHorizontal from 'components/molecules/button-horizontal';
 import Title from '../components/atoms/title';
-import { hitEvent } from 'utils/metrics';
-import css from './index.module.scss';
+import css from '../../utils/styles/home.module.scss';
 
 export default function Home(props) {
 
