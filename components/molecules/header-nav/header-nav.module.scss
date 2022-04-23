@@ -193,6 +193,8 @@
    ******************************************/
   @include gt-phone {
     background: $color-dark-background-5;
+    padding: 2rem;
+    
     .navbar-container {
       .logo {
         width: auto;

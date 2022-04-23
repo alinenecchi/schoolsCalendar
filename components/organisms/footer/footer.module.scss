@@ -1,0 +1,75 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.organism__footer-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  // height: 17rem;
+  //background-color: $white;
+  background: $color-dark-background-5;
+  color: $white;
+  //color: $gray-gray-3;
+  font-size: 1rem;
+  padding: 1rem;
+
+  .links-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .social-container {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    gap: 1rem;
+    max-width: 51rem;
+    //color:$primary-brand-blue;
+  }
+  
+  .titleText{
+    font-size: 2rem;
+    //color:$primary-brand-blue;
+  }
+
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+  @include gt-phone {
+    //width: 80vw;
+    //max-width: 1200px;
+    margin-top: 2rem;
+    justify-content: center;
+    margin: auto;
+    padding: 2rem;
+    gap: 1rem;
+
+    .info {
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    
+    .info-container {
+      flex-direction: row;
+      gap: 1rem;
+    }
+    .links-container {
+      flex-direction: row; 
+      gap: 1rem;
+    }
+
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from '../../components/atoms/title';
+import Footer from '../../components/organisms/footer';
 import css from './contact.module.scss';
 
 export default function Contact(props) {
@@ -18,5 +19,6 @@ export default function Contact(props) {
     <div className={css["title"]}>
       <Title> Contato </Title>
     </div>
+    <Footer/>
   </div>;
 }

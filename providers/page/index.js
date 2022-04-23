@@ -1,9 +1,9 @@
 import React from 'react';
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 
 const transparent = 'transparent';
 const color = '#04a4b6';
-const formLabelsTheme = createMuiTheme({
+const formLabelsTheme = createTheme({
   overrides: {
     shape: {
       borderRadius: 0

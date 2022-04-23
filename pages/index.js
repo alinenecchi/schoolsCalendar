@@ -2,6 +2,7 @@ import React from "react";
 import * as pageData from "../data/main";
 import Hero from "../components/molecules/hero";
 import Title from "../components/atoms/title";
+import Footer from '../components/organisms/footer';
 import css from "../utils/styles/home.module.scss";
 
 export default function Home(props) {
@@ -20,6 +21,7 @@ export default function Home(props) {
       <div className={css["title"]}>
         <Title> Hello SchollsCalendar</Title>
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -4,6 +4,12 @@
 .page__contact-container {
   position: relative;
 
+  .title {
+    height: 100%;
+    min-height: 900px;
+    padding: 1rem;
+  }
+
   /******************************************
    *      RESPONSIVITY (media queries)      *
    ******************************************/
