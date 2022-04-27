@@ -8,7 +8,6 @@
   width: 100%;
   color: $white;
   background: $color-dark-background-5;
-  //background-color: transparent;
   z-index: 9999;
   padding: 1rem;
 
@@ -17,7 +16,7 @@
   }
 
   @supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
-    background-color: #fff9;
+    background: $color-dark-background-5;
     backdrop-filter: blur(8px);
   }
   
@@ -129,6 +128,7 @@
       transform: translateX(0);
       opacity: 1;
       background-color: #fff;
+      background: $color-dark-background-5;
 
       .link-menu{
         &:hover {
