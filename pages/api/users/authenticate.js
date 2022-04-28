@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 import getConfig from 'next/config';
 
-import { apiHandler} from '../../../helpers/api/api-handler';
-import { usersRepo} from '../../../helpers/api/users-repo';
+import { apiHandler,usersRepo} from '../../../helpers/api';
 
 
 const { serverRuntimeConfig } = getConfig();
