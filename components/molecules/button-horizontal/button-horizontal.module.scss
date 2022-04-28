@@ -22,12 +22,12 @@
 
   span {
     font-size: 1rem;
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   .arrowRight {
-    height: .9rem;
-    width: .9rem;
+    height: .5rem;
+    width: .5rem;
     transform: rotate(45deg);
   }
 
@@ -50,8 +50,12 @@
   }
 
   &[data-style="orange"] {
+    width: auto;
+    height: 35px;
+    padding: 15px 25px 15px 25px;
     background-color: #FF6551;
-    ;
+    border-radius: 5px;
+    gap: 0.5rem;
     border: none;
 
     &:hover {
@@ -60,6 +64,10 @@
 
     span {
       color: $color-dark-text;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0.2px;
+      color: $white;
     }
 
     .arrowRight {

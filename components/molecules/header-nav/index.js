@@ -7,6 +7,7 @@ import ArrowRight from '../../icons/ChevronRight';
 import Link from 'next/link';
 // loading the sass style fot the component
 import css from './header-nav.module.scss';
+import ButtonHorizontal from '../button-horizontal';
 
 
 /**
@@ -36,7 +37,6 @@ function HeaderNav (props) {
     setMenuOpen(!menuOpen);
   }
 
-
   React.useEffect(_ => {
     document.body.dataset.menuOpen = menuOpen ? 1 : 0;
   }, [menuOpen]);
@@ -58,29 +58,67 @@ function HeaderNav (props) {
       <div className={css["navbar-container"]} data-content-wrapper>
         <Link href="/">
           <a title="CALENDAR-SCHOOLS" onClick={clicked('menu-logo')}>
-            Logo
+            LOGO
           </a>
         </Link>
+
         <div className={css["menu-container"]}>
+
+        <Link href="/home">
+            <a 
+              onClick={clicked('Home')}
+              title="Home"
+              data-selected={router.pathname === '/home' ? 1 : null}
+              style={{order: 1}}
+            >
+              Home
+            </a>
+          </Link>
 
           <Link href="/who-we-are">
             <a
               onClick={clicked('menu-quem-somos')}
               data-selected={router.pathname === '/who-we-are' ? 1 : null}
-              style={{order: 1}}
+              style={{order: 2}}
             >
               Quem somos
             </a>
           </Link>
       
-          <Link href="/contact">
+          <Link href="/users">
             <a 
-              onClick={clicked('Contato')}
-              title="Contato"
-              data-selected={router.pathname === '/contact' ? 1 : null}
+              onClick={clicked('Users')}
+              title="Users"
+              data-selected={router.pathname === '/users' ? 1 : null}
               style={{order: 3}}
             >
-              Contato
+              Users
+            </a>
+          </Link>
+          
+          <Link href="/account/login">
+            <a 
+              onClick={clicked('Login')}
+              title="Login"
+              data-selected={router.pathname === '/account/login' ? 1 : null}
+              style={{order: 4}}
+            >
+              <ButtonHorizontal style="orange">
+                Login
+              </ButtonHorizontal>
+            </a>
+          </Link>
+        
+          <Link href="/account/register">
+            <a 
+              onClick={clicked('Register')}
+              title="Register"
+              data-selected={router.pathname === '/account/register"' ? 1 : null}
+              style={{order: 5}}
+            >
+              <ButtonHorizontal style="orange">
+                Register
+              </ButtonHorizontal>
             </a>
           </Link>
           

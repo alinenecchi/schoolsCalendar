@@ -8,3 +8,9 @@ body {
     rgba(50, 64, 119, 1) 100%
   );
 }
+a { cursor: pointer; }
+
+.app-container {
+    min-height: 500px;
+}
+

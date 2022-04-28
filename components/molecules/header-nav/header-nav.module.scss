@@ -170,16 +170,22 @@
         order: 2;
       }
 
-      [data-item="share"] {
+      [data-item="home"] {
         order: 1;
       }
 
-      [data-item="one"] {
+      [data-item="users"] {
         order: 3;
       }
 
-      [data-item="flex"] {
+      [data-item="who-we-are"] {
         order: 2;
+      }
+      [data-item="login"] {
+        order: 4;
+      }
+      [data-item="register"] {
+        order: 5;
       }
     }
   }
