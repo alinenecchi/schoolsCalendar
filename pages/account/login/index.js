@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-import Link  from '../../components/atoms/link';
-import Layout  from '../../components/molecules/account';
-import { userService, alertService } from 'services';
+import Link  from '../../../components/atoms/link';
+import Layout  from '../../../components/molecules/account';
+import { userService, alertService } from '../../../services';
 
 export default Login;
 
