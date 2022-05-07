@@ -19,6 +19,6 @@ export default function Home(props) {
     <div className={css["title"]}>
       <Title> Hello </Title>
     </div>
-    <Footer/>
+    
   </div>;
 }

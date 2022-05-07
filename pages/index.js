@@ -21,7 +21,6 @@ export default function Home(props) {
       <div className={css["title"]}>
         <Title> Hello SchollsCalendar</Title>
       </div>
-      <Footer/>
     </div>
   );
 }
