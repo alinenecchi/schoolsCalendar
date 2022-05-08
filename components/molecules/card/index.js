@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../../atoms/title";
+import Line from "../../icons/line";
 import css from "./loader.module.scss";
 
 function Card(props) {
@@ -11,7 +12,12 @@ function Card(props) {
       {...other}
     >
       <div className={css["icon"]}>{icon}</div>
-      <Title level={3} className={css["title"]}>{title}</Title>
+      <Title level={3} className={css["title"]}>
+        {title}
+      </Title>
+      <div className={css["line"]}>
+        <Line />
+      </div>
       <span className={css["text"]}>{text}</span>
       {children}
     </div>

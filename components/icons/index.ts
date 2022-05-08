@@ -8,3 +8,4 @@ export { default as Telescope } from "./Telescope";
 export { default as Blackboards } from "./Blackboards";
 export { default as Graduation } from "./Graduation";
 export { default as Line } from "./line";
+export { default as LineLarge } from "./line-large";

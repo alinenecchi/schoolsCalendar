@@ -4,6 +4,7 @@ import Hero from "../components/molecules/hero";
 import Title from "../components/atoms/title";
 import css from "./index.module.scss";
 import SectionCard from "../components/organisms/section-card";
+import SectionWhoWeAre from "../components/organisms/section-who-we-are";
 
 export default function Home(props) {
   const { className = "", children, sectionHero, ...other } = props;
@@ -19,6 +20,9 @@ export default function Home(props) {
       </Hero>
 
       <SectionCard className={css.sectionCard} dataCard={pageData.dataCard} />
+      <SectionWhoWeAre 
+      className={css.sectionWhoWeAre} 
+      data={pageData.whoWeAre}/>
     </div>
   );
 }

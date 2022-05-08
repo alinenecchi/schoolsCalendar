@@ -19,3 +19,10 @@ export const dataCard = [
     text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
   },
 ];
+
+export const whoWeAre = {
+  title : "Quem somos",
+  text : "Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics ",
+  image : "/images/image-who-we-are.png",
+  alt : "Estudante"
+}
