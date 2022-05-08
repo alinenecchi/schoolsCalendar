@@ -3,6 +3,9 @@ import Link from 'next/link';
 
 // loading the sass style fot the component
 import css from './footer.module.scss';
+import Facebook from '../../icons/facebook';
+import Instagram from '../../icons/instagram';
+import Twitter from '../../icons/twitter';
 
 /**
  * Organism Footer
@@ -39,9 +42,9 @@ function Footer (props) {
         </div>
 
         <div className={css["social-container"]}>
-          <a href="" title="Instagram" target="_blank">Insta</a>
-          <a href="" title="Facebook" target="_blank">Face</a>
-          <a href="" title="Linkedin" target="_blank">Linkedin</a>
+          <a href="" title="Instagram" target="_blank"><Instagram/></a>
+          <a href="" title="Facebook" target="_blank"><Facebook/></a>
+          <a href="" title="Twitter" target="_blank"><Twitter/></a>
         </div>
          
       </div>

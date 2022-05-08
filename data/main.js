@@ -35,19 +35,29 @@ export const dataInfo  = {
       icon: <Graduation />,
       title: "Matrículas",
       text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
-      href: "/who-we-are"
+      href: "/who-we-are",
+      buttonName: "Saiba mais"
     },
     {
       icon: <Blackboards />,
       title: "Calendário Escolar",
       text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
-      href: "/who-we-are"
+      href: "/who-we-are",
+      buttonName: "Saiba mais"
     },
     {
       icon: <Telescope />,
       title: "Lista de Materiais Escolar",
       text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
       href: "/who-we-are",
+      buttonName: "Saiba mais"
     },
   ]
+}
+
+export const dataContact = {
+  title : "Fale Conosco",
+  text : "Endereço: R. Quinze de Novembro, 1146 – Vila Dubus, Pres. Prudente – SP",
+  buttonName: "Como chegar",
+  href: "/who-we-are",
 }
