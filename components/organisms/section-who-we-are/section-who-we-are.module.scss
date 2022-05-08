@@ -1,0 +1,68 @@
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
+
+.organism__section-who-we-are-container {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+
+    .column1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+
+      .title {
+        font-weight: 700;
+        color: $color-base-8;
+        font-size: 40px;
+        line-height: 50px;
+        letter-spacing: 0.2px;
+        text-transform: none;
+        padding: 0;
+        margin: 0;
+      }
+      .text {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing:  0.2px;
+        color: $color-base-7;
+        max-width: 345px;
+      }
+    }
+
+    .column2 {
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+  @include gt-phone {
+    .container {
+      flex-direction: row;
+
+      .column1 {
+        gap: 2rem;
+      }
+    }
+  }
+
+  @include tablet {
+    .container {
+      flex-direction: column;
+    }
+  }
+}

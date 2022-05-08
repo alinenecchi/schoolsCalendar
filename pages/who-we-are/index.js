@@ -19,6 +19,5 @@ export default function WhoWeAre(props) {
     <div className={css["title"]}>
       <Title>Quem somos</Title>
     </div>
-    <Footer/>
   </div>;
 }

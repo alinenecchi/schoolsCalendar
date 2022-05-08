@@ -5,6 +5,8 @@
   position: relative;
   width: 100vw;
   align-items: center;
+  height: auto;
+  min-height: 300px;
 
   .bg-image {
     position: absolute;

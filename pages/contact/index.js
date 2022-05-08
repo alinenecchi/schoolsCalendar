@@ -19,6 +19,5 @@ export default function Contact(props) {
     <div className={css["title"]}>
       <Title> Contato </Title>
     </div>
-    <Footer/>
   </div>;
 }

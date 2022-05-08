@@ -8,11 +8,18 @@
   flex-direction: center;
   flex-direction: column;
   justify-content: center;
+
+  .sectionCard {
+    padding: 0rem 1rem 1rem 1rem;
+  }
   
-
-
   @include gt-phone {
-    // TODO: add specifications for devices that are greater than phones
-    // example: .content { ... }
+    .sectionCard {
+      z-index: 2;
+      display: flex;
+      margin-top: -10rem;
+      padding-bottom: 5rem;
+  
+    }
   }
 }

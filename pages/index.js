@@ -2,8 +2,9 @@ import React from "react";
 import * as pageData from "../data/main";
 import Hero from "../components/molecules/hero";
 import Title from "../components/atoms/title";
-import Footer from '../components/organisms/footer';
-import css from "../utils/styles/home.module.scss";
+import css from "./index.module.scss";
+import SectionCard from "../components/organisms/section-card";
+import SectionWhoWeAre from "../components/organisms/section-who-we-are";
 
 export default function Home(props) {
   const { className = "", children, sectionHero, ...other } = props;
@@ -18,10 +19,10 @@ export default function Home(props) {
         </div>
       </Hero>
 
-      <div className={css["title"]}>
-        <Title> Hello SchollsCalendar</Title>
-      </div>
-      <Footer/>
+      <SectionCard className={css.sectionCard} dataCard={pageData.dataCard} />
+      <SectionWhoWeAre 
+      className={css.sectionWhoWeAre} 
+      data={pageData.whoWeAre}/>
     </div>
   );
 }

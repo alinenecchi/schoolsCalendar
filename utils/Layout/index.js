@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router" ;
 import Head from 'next/head';
 import HeaderNav from '../../components/molecules/header-nav';
+import Footer from '../../components/organisms/footer';
 import Transition from "./transition" ;
 import ButtonHorizontal from '../../components/molecules/button-horizontal';
 import css from './layout.module.scss';
@@ -35,25 +36,11 @@ const Layout = ({ children }) => {
         </script>
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="theme-color" content="#00708d" />
-       
-
         <meta name="twitter:card" content="summary_large_image" />
-
-        <meta property="og:type" content="website" />
         <meta itemProp="inLanguage" content="pt-BR" />
         <meta property="og:locale" content="pt-BR" />
-
-       
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-       
-        <meta name="description" content="Uma solução que seja inteligente, simples de usar e gentil com o meio ambiente sempre que você precisar se mover onde estiver." />
-        <meta property="og:description" content="Uma solução que seja inteligente, simples de usar e gentil com o meio ambiente sempre que você precisar se mover onde estiver." />
-        <meta property="twitter:description" content="Uma solução que seja inteligente, simples de usar e gentil com o meio ambiente sempre que você precisar se mover onde estiver." />
-
+        <link rel="icon" type="image/x-icon" href="/images/favicon2.ico"/>
 
         {/* <meta name="twitter:creator" content="@"> */}
 
@@ -84,8 +71,6 @@ const Layout = ({ children }) => {
             )
             : null
         }
-
-        <link rel="stylesheet" href="/carousel.css" type="text/css" />
       </Head>
       <HeaderNav
         home={router.pathname.startsWith('/home')}
@@ -97,6 +82,7 @@ const Layout = ({ children }) => {
           {children}
         </main>
       </Transition>
+      <Footer/>
 
       {
         isCookieConsented === 'ask'

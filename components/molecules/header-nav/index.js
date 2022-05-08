@@ -7,6 +7,7 @@ import ArrowRight from '../../icons/ChevronRight';
 import Link from 'next/link';
 // loading the sass style fot the component
 import css from './header-nav.module.scss';
+import ButtonHorizontal from '../button-horizontal';
 
 
 /**
@@ -78,9 +79,22 @@ function HeaderNav (props) {
               onClick={clicked('Contato')}
               title="Contato"
               data-selected={router.pathname === '/contact' ? 1 : null}
-              style={{order: 3}}
+              style={{order: 2}}
             >
               Contato
+            </a>
+          </Link>
+
+          <Link href="/login">
+            <a 
+              onClick={clicked('Login')}
+              title="Login"
+              data-selected={router.pathname === '/login' ? 1 : null}
+              style={{order: 3}}
+            >
+              <ButtonHorizontal style="orange">
+                Login
+              </ButtonHorizontal>
             </a>
           </Link>
           
