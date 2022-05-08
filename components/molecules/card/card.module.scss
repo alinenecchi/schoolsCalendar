@@ -35,7 +35,6 @@
 
   @include gt-phone {
     max-width: 328px;
-    height: 328px;
     gap: 1rem;
     &[data-style="info"] {
       height: auto;
