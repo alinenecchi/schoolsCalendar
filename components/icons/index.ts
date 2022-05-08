@@ -7,3 +7,4 @@ export { default as ChevronRight } from "./ChevronRight";
 export { default as Telescope } from "./Telescope";
 export { default as Blackboards } from "./Blackboards";
 export { default as Graduation } from "./Graduation";
+export { default as Line } from "./line";
