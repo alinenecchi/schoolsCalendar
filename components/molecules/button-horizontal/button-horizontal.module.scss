@@ -50,9 +50,12 @@
   }
 
   &[data-style="orange"] {
+    width: auto;
+    height: auto;
     background-color: #FF6551;
-    ;
     border: none;
+    border-radius: 5px;
+    gap: 1rem;
 
     &:hover {
       background-color: darken(#FF6551, 10%);
@@ -60,6 +63,7 @@
 
     span {
       color: $color-dark-text;
+      text-transform:capitalize;
     }
 
     .arrowRight {

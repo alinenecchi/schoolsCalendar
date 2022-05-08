@@ -1,6 +1,6 @@
 import React from 'react';
 import Title from '../../components/atoms/title';
-import Footer from '../../components/organisms/footer';
+import Card from '../../components/molecules/card';
 import css from './home.module.scss';
 
 export default function Home(props) {
@@ -18,6 +18,7 @@ export default function Home(props) {
   >    
     <div className={css["title"]}>
       <Title> Hello </Title>
+      <Card></Card>
     </div>
     
   </div>;
