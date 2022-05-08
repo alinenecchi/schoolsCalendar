@@ -26,3 +26,28 @@ export const whoWeAre = {
   image : "/images/image-who-we-are.png",
   alt : "Estudante"
 }
+
+export const dataInfo  = {
+  title : "Informações",
+  text : "Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics ",
+  dataCard : [
+    {
+      icon: <Graduation />,
+      title: "Matrículas",
+      text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
+      href: "/who-we-are"
+    },
+    {
+      icon: <Blackboards />,
+      title: "Calendário Escolar",
+      text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
+      href: "/who-we-are"
+    },
+    {
+      icon: <Telescope />,
+      title: "Lista de Materiais Escolar",
+      text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
+      href: "/who-we-are",
+    },
+  ]
+}

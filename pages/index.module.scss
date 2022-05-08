@@ -11,6 +11,8 @@
 
   .sectionCard {
     padding: 0rem 1rem 1rem 1rem;
+    margin-top: -5rem;
+    z-index: 2;
   }
   
   @include gt-phone {
