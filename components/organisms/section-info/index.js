@@ -33,8 +33,8 @@ function SectionInfo(props) {
                 style="info"
               >
                 <Link href={card.href}>
-                  <a title={card.Title}>
-                    <Button className={css["button"]} style="transparent">Saiba mais</Button>
+                  <a title={card.title}>
+                    <Button className={css["button"]} style="transparent">{card.buttonName}</Button>
                   </a>
                 </Link>
               </Card>
