@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../../atoms/title";
 import Line from "../../icons/line";
-import css from "./loader.module.scss";
+import css from "./card.module.scss";
 
 function Card(props) {
   const { className = "", children, icon, title, style, text, ...other } = props;

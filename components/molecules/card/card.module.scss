@@ -29,6 +29,10 @@
     color: $color-base-7;
   }
 
+  &[data-style="info"] {
+    padding: 2rem;
+  }
+
   @include gt-phone {
     max-width: 328px;
     height: 328px;
@@ -48,5 +52,10 @@
   @include tablet {
     width: 100%;
     max-width: 100%;
+
+    &[data-style="info"] {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }

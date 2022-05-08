@@ -1,15 +1,14 @@
-@import 'utils/styles/_colors';
-@import 'utils/styles/_mixins';
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
 
-.organism__section-info-container{
+.organism__section-info-container {
   position: relative;
   display: flex;
   justify-content: center;
   padding: 1rem;
   background: $color-dark-background-5;
- 
-  .container {
 
+  .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,13 +23,12 @@
     .text {
       font-size: 14px;
       line-height: 20px;
-      letter-spacing:  0.2px;
+      letter-spacing: 0.2px;
       color: $white;
       max-width: 25rem;
       text-align: center;
       padding-bottom: 5rem;
     }
-  
 
     .card-container {
       display: flex;
@@ -39,13 +37,10 @@
       gap: 2rem;
 
       .button {
-        padding: 4rem 0 2rem 0;
+        padding: 2rem 0 2rem 0;
       }
     }
-
   }
-
- 
 
   /******************************************
    *      RESPONSIVITY (media queries)      *
@@ -56,13 +51,21 @@
     .container {
       .card-container {
         flex-direction: row;
+        .button {
+          padding: 4rem 0 2rem 0;
+        }
       }
     }
   }
 
   @include tablet {
-    .card-container {
-      flex-direction: column;
+    .container {
+      .card-container {
+        flex-direction: column;
+        .button {
+          padding: 1rem 0 1rem 0;
+        }
+      }
     }
   }
 }
