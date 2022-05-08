@@ -4,11 +4,12 @@ import Line from "../../icons/line";
 import css from "./loader.module.scss";
 
 function Card(props) {
-  const { className = "", children, icon, title, text, ...other } = props;
+  const { className = "", children, icon, title, style, text, ...other } = props;
 
   return (
     <div
       className={`${css["molecule__card-container"]} ${className}`}
+      data-style={style}
       {...other}
     >
       <div className={css["icon"]}>{icon}</div>

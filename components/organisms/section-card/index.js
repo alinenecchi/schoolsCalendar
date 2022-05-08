@@ -3,7 +3,7 @@ import Card from "../../molecules/card";
 import css from "./section-card.module.scss";
 
 /**
- * Organism Footer
+ * Organism SectionCard
  *
  * <!-- TODO: add a description here! -->
  */

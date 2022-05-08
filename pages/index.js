@@ -5,6 +5,7 @@ import Title from "../components/atoms/title";
 import css from "./index.module.scss";
 import SectionCard from "../components/organisms/section-card";
 import SectionWhoWeAre from "../components/organisms/section-who-we-are";
+import SectionInfo from "../components/organisms/section-info";
 
 export default function Home(props) {
   const { className = "", children, sectionHero, ...other } = props;
@@ -20,9 +21,8 @@ export default function Home(props) {
       </Hero>
 
       <SectionCard className={css.sectionCard} dataCard={pageData.dataCard} />
-      <SectionWhoWeAre 
-      className={css.sectionWhoWeAre} 
-      data={pageData.whoWeAre}/>
+      <SectionWhoWeAre className={css.sectionWhoWeAre} data={pageData.whoWeAre}/>
+      <SectionInfo className={css.sectionInfo} dataInfo={pageData.dataInfo}/>
     </div>
   );
 }

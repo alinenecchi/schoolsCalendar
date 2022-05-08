@@ -10,7 +10,7 @@
   justify-content: center;
   padding: 2.5rem;
   width: 100%;
-  max-width: 100%;
+  max-width: 329px;
   background: #ffffff;
 
   .title {
@@ -32,6 +32,18 @@
   @include gt-phone {
     max-width: 328px;
     height: 328px;
+    gap: 1rem;
+    &[data-style="info"] {
+      height: auto;
+
+      .title {
+        height: 56px;
+      }
+      .line {
+        padding: 0;
+      }
+    }
+  
   }
   @include tablet {
     width: 100%;
