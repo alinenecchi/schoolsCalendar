@@ -6,31 +6,30 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  // height: 17rem;
-  //background-color: $white;
   background: $color-dark-background-5;
   color: $white;
-  //color: $gray-gray-3;
-  font-size: 1rem;
-  padding: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2rem 1rem 2rem 1rem;
 
-  .links-container {
+  .container-info {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+    .info{
+      display: flex;
+      flex-direction: column;
+
+      .social-container {
+        margin-top: 1rem;
+      }
+    }
   }
 
-  .info {
-    display: flex;
-    flex-direction: column;
-  }
 
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
   .social-container {
-    margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -48,7 +47,9 @@
   }
 
   .titleText {
-    font-size: 2rem;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1rem;
     //color:$primary-brand-blue;
   }
 
@@ -58,23 +59,15 @@
   @include gt-phone {
     margin-top: 2rem;
     justify-content: center;
-    //margin: auto;
     padding: 2rem;
     gap: 1rem;
 
-    .info {
-      flex-direction: row;
+    .container-info {
       gap: 1rem;
-      justify-content: space-between;
-    }
-
-    .info-container {
       flex-direction: row;
-      gap: 1rem;
     }
     .links-container {
       flex-direction: row;
-      gap: 1rem;
     }
   }
   @include tablet {
