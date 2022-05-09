@@ -1,5 +1,5 @@
-@import 'utils/styles/_colors';
-@import 'utils/styles/_mixins';
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
 
 .organism__form-user-container {
   position: relative;
@@ -35,7 +35,7 @@
         label {
           font-size: 14px;
           color: $color-orange;
-          font-weight:700;
+          font-weight: 700;
           input {
             margin-right: 0.5rem;
           }
@@ -46,10 +46,10 @@
     .input {
       color: $gray-gray-3;
       height: 38px;
-      width: 326px;
+      max-width: 326px;
       padding: 1rem;
     }
-  
+
     .button {
       max-width: 7rem;
       width: auto;
@@ -57,13 +57,9 @@
     }
   }
 
-
-
-
-
   @include gt-phone {
-
-
-
+    .input {
+      width: 326px;
+    }
   }
 }
