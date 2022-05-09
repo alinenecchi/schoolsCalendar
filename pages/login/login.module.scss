@@ -4,13 +4,17 @@
 
 .page__login-container {
   position: relative;
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
 
   .column1 {
     background-image: url("/images/login/background.png");
-    width: 100%;
     background-repeat: no-repeat;
+    height: 100%;
+  }
+  .column2 {
+    height: 100%;
   }
 
 
