@@ -1,0 +1,20 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+
+.page__login-container {
+  position: relative;
+  display: flex;
+
+
+  .column1 {
+    background-image: url("/images/login/background.png");
+  }
+
+
+  
+  
+  @include gt-phone {
+
+  }
+}

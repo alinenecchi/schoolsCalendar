@@ -1,0 +1,226 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.atom__check-control-container {
+  position: relative;
+  display: inline-block;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    // visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    width: 5px;
+    height: 5px;
+
+    &:focus {
+      +div {
+        // background: red;
+        border-width: 3px;
+        box-shadow: 0 0 5px $color-primary-1;
+      }
+    }
+
+    &:checked {
+      +div {
+        &::after {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    gap: $spacing-s;
+    align-items: center;
+    color: $color-base-2;
+    font-size: 1rem;
+  }
+
+  .the-checkbox {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border: solid 1px $color-primary-1;
+    background: $color-white;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      visibility: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 1.25rem;
+      height: 1.25rem;
+      background-color: $color-primary-1;
+    }
+  }
+
+  &[data-style="useds-filters"] {
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      // visibility: hidden;
+      position: absolute;
+      pointer-events: none;
+      width: 5px;
+      height: 5px;
+  
+      &:focus {
+        +div {
+          // background: red;
+          border-width: 1px;
+          box-shadow: 0 0 0 transparent;
+        }
+      }
+    }
+
+    label {
+      color: $secondary-kinto-blue-3;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .label-check {
+      font-weight: 700;
+    }
+
+    .the-checkbox {
+      position: relative;
+      width: 1.15rem;
+      height: 1.15rem;
+      border: solid 1px $color-primary-1;
+      background: $color-white;
+      cursor: pointer;
+  
+      &::after {
+        content: '';
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 0.75rem;
+        height: 0.75rem;
+        border: solid 1px $secondary-kinto-blue-5;
+        background-color: $color-primary-1;
+      }
+    }
+  }
+
+  &[data-style="useds-filters-radio"] {
+
+    input[type="radio"] {
+      // visibility: hidden;
+      position: absolute;
+      pointer-events: none;
+      width: 5px;
+      height: 5px;
+  
+      &:focus {
+        +div {
+          // background: red;
+          border-width: 1px;
+          box-shadow: 0 0 0 transparent;
+        }
+      }
+    }
+  
+    label {
+      color: $secondary-kinto-blue-3;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .label-check {
+      font-weight: 700;
+    }
+
+    .the-checkbox {
+      position: relative;
+      width: 1.15rem;
+      height: 1.15rem;
+      border: solid 1px $color-primary-1;
+      background: $color-white;
+      border-radius: 10px;
+      cursor: pointer;
+  
+      &::after {
+        content: '';
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 0.6rem;
+        height: 0.6rem;
+        border: solid 5px #00708d;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &[data-style="carId"] {
+    .the-checkbox {
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: solid 1px $color-primary-1;
+      background: $color-white;
+      cursor: pointer;
+  
+      &::after {
+        content: '';
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: $color-primary-1;
+      }
+    }
+  }
+  &[data-style="map"] {
+    label {
+      color: $white;
+    }
+    .the-checkbox {
+      position: relative;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: solid 1px $color-primary-1;
+      background: $color-white;
+      cursor: pointer;
+  
+      &::after {
+        content: '';
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 1rem;
+        height: 1rem;
+        border: solid 1px $secondary-kinto-blue-5;
+        background-color: $color-primary-1;
+      }
+    }
+  }
+}

@@ -74,8 +74,9 @@ const Layout = ({ children }) => {
       </Head>
       <HeaderNav
         home={router.pathname.startsWith('/home')}
-        contato={router.pathname === '/contact'}
-        quem-somos={router.pathname === '/who-we-are'}
+        contact={router.pathname === '/contact'}
+        whoWeAre={router.pathname === '/who-we-are'}
+        login={router.pathname === '/login'}
       />
       <Transition location={router.pathname}>
         <main className={css["main"]}>

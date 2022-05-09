@@ -17,7 +17,7 @@ class TheApp extends App {
   };
 
   render() {
-    const { Component, pageProps /*, apollo*/ } = this.props;
+    const { Component, pageProps ,/*, apollo*/ } = this.props;
 
     return (
       <>
