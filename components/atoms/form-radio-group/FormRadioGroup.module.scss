@@ -1,0 +1,9 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.atom__form-radio-group-container {
+  position: relative;
+
+  @include gt-phone {
+  }
+}

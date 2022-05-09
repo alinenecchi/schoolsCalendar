@@ -1,0 +1,69 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.organism__form-user-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding: 1rem;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+
+    .checked {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .checked-item {
+        background: $white;
+        width: 120px;
+        padding: 0.3rem;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 2rem;
+        label {
+          font-size: 14px;
+          color: $color-orange;
+          font-weight:700;
+          input {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .input {
+      color: $gray-gray-3;
+      height: 38px;
+      width: 326px;
+      padding: 1rem;
+    }
+  
+    .button {
+      max-width: 7rem;
+      width: auto;
+      justify-self: center;
+    }
+  }
+
+
+
+
+
+  @include gt-phone {
+
+
+
+  }
+}
