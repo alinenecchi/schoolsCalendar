@@ -1,5 +1,5 @@
-@import 'utils/styles/_colors';
-@import 'utils/styles/_mixins';
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
 
 .organism__footer-container {
   position: relative;
@@ -33,13 +33,21 @@
     margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content: flex-start;
     gap: 1rem;
     max-width: 51rem;
     //color:$primary-brand-blue;
+
+    .icones {
+      svg {
+        path {
+          fill: $color-orange;
+        }
+      }
+    }
   }
-  
-  .titleText{
+
+  .titleText {
     font-size: 2rem;
     //color:$primary-brand-blue;
   }
@@ -48,11 +56,9 @@
    *      RESPONSIVITY (media queries)      *
    ******************************************/
   @include gt-phone {
-    //width: 80vw;
-    //max-width: 1200px;
     margin-top: 2rem;
     justify-content: center;
-    margin: auto;
+    //margin: auto;
     padding: 2rem;
     gap: 1rem;
 
@@ -61,15 +67,19 @@
       gap: 1rem;
       justify-content: space-between;
     }
-    
+
     .info-container {
       flex-direction: row;
       gap: 1rem;
     }
     .links-container {
-      flex-direction: row; 
+      flex-direction: row;
       gap: 1rem;
     }
-
+  }
+  @include tablet {
+    .info {
+      flex-direction: column;
+    }
   }
 }

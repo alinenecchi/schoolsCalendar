@@ -23,8 +23,6 @@ export default function Login(props) {
       <div className={css.column2}>
         <img src="/images/login/children.png"></img>
       </div>
-      
-      
     </div>
   );
 }

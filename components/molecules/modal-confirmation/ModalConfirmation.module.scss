@@ -1,0 +1,115 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.molecule__modal-confirmation-container {
+  position: relative;
+  margin: 1rem;
+
+  .container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    position: static;
+    border: 1px solid $color-base-4;
+
+    .box-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .loader {
+      margin: 1rem 0 4rem 0;
+    }
+
+    .title {
+      margin: 1rem;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+    }
+
+    .content {
+      margin: 0 1rem 1rem 1rem;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .button {
+      margin: 1rem 1rem 2rem 1rem;
+      width: max-content;
+    }
+  }
+
+  .side{
+    width: 8px;
+    background: $color-orange;
+  }
+  &[data-style="loader"] {
+  
+    .side{
+      background: $color-orange;
+    }
+
+    .button{
+      display: none;
+    }
+  }
+
+  &[data-style="success"] {
+
+    .side{
+      background: $color-success-1;
+    }
+  }
+
+  &[data-style="warning"] {
+
+    .side{
+      background: $color-orange;
+    }
+  }
+  
+
+  @include gt-phone {
+    .container{
+
+      .box-container{
+
+        .title {
+          font-size: 24px;
+          line-height: 28px;
+        }
+
+        .content {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        .button {
+          margin: 1rem 1rem 2rem 1rem;
+          // width: 135px;
+          width: max-content;
+        }
+      }
+    }
+   
+    &[data-style="loader"] {
+      min-width: 50rem;
+
+      .button{
+        display: none;
+      }
+    }
+  }
+  @include tablet {
+
+    &[data-style="loader"] {
+      min-width: 30rem;
+    }
+  }
+}

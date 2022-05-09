@@ -1,6 +1,5 @@
-@import 'utils/styles/_colors';
-@import 'utils/styles/_mixins';
-
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
 
 .page__login-container {
   position: relative;
@@ -11,7 +10,7 @@
   // background-repeat: no-repeat;
   // object-fit: cover;
   // background-size: 100% 100%;
-  
+
   .column1 {
     display: flex;
     justify-content: center;
@@ -27,9 +26,6 @@
     height: 600px;
   }
 
-
-  
-  
   @include gt-phone {
     display: grid;
     grid-template-columns: 1fr 1fr;

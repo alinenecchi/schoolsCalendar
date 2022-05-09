@@ -42,9 +42,9 @@ function Footer (props) {
         </div>
 
         <div className={css["social-container"]}>
-          <a href="" title="Instagram" target="_blank"><Instagram/></a>
-          <a href="" title="Facebook" target="_blank"><Facebook/></a>
-          <a href="" title="Twitter" target="_blank"><Twitter/></a>
+          <a href="" title="Instagram" target="_blank"><Instagram  className={css["icones"]}/></a>
+          <a href="" title="Facebook" target="_blank"><Facebook  className={css["icones"]}/></a>
+          <a href="" title="Twitter" target="_blank"><Twitter  className={css["icones"]}/></a>
         </div>
          
       </div>

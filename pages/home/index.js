@@ -1,4 +1,6 @@
 import React from "react";
+import HeaderNav from "../../components/molecules/header-nav";
+import Footer from '../../components/organisms/footer';
 import css from "./home.module.scss";
 
 export default function Home(props) {
@@ -6,7 +8,8 @@ export default function Home(props) {
 
   return (
     <div className={`${css["page__home-container"]} ${className}`} {...other}>
-      home
+      <HeaderNav login= {false}/>
+      <Footer className={css.footer}/>
     </div>
   );
 }

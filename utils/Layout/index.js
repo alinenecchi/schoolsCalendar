@@ -72,18 +72,18 @@ const Layout = ({ children }) => {
             : null
         }
       </Head>
-      <HeaderNav
+      {/* <HeaderNav
         home={router.pathname.startsWith('/home')}
         contact={router.pathname === '/contact'}
         whoWeAre={router.pathname === '/who-we-are'}
         login={router.pathname === '/login'}
-      />
+      /> */}
       <Transition location={router.pathname}>
         <main className={css["main"]}>
           {children}
         </main>
       </Transition>
-      <Footer/>
+      {/* <Footer/> */}
 
       {
         isCookieConsented === 'ask'
