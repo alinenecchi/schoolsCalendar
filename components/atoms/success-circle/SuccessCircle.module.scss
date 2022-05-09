@@ -1,0 +1,116 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.atom__success-circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 1rem 0;
+  .circle,
+  .circleBorder {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid  $color-success-1;
+  }
+  .circle {
+    z-index: 1;
+    position: relative;
+    background: $white;
+    transform: scale(1);
+    animation: success-anim 700ms ease;
+  }
+  .circleBorder {
+    z-index: 0;
+    position: absolute;
+    background:  $color-success-1;
+    transform: scale(1.1);
+    animation: circle-anim 400ms ease;
+  }
+  
+  @keyframes success-anim {
+    0% {
+      transform: scale(0);
+    }
+    30% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes circle-anim {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  
+  .success::before,
+  .success::after {
+    content: "";
+    display: block;
+    height: 4px;
+    background:  $color-success-1;
+    position: absolute;
+  }
+  
+  .success::before {
+    width: 17px;
+    top: 58%;
+    left: 23%;
+    transform: rotateZ(50deg);
+  }
+  
+  .success::after {
+    width: 30px;
+    top: 50%;
+    left: 35%;
+    transform: rotateZ(-50deg);
+  }
+  &[data-style="notify"] {
+    justify-content: flex-start;
+    padding:0;
+    .circle,
+    .circleBorder{
+      border: 1px solid  $color-success-1;
+      width: 25px;
+      height: 25px;
+    }
+    .success::before,
+    .success::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background:  $color-success-1;
+      position: absolute;
+    }
+    .success::before {
+      width: 7px;
+      top: 60%;
+      left: 20%;
+      transform: rotateZ(50deg);
+    }
+  
+    .success::after {
+      width: 12px;
+      top: 50%;
+      left: 35%;
+      transform: rotateZ(-50deg);
+    }
+    .circle {
+      transform: scale(1.1);
+    }
+    .circleBorder {
+      transform: scale(1.2);
+    }
+  }
+  
+  @include gt-phone {
+    // TODO: add specifications for devices that are greater than phones
+    // example: .content { ... }
+  }
+}

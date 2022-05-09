@@ -1,0 +1,132 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.atom__warning-circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 1rem 0;
+  .circle,
+  .circleBorder {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid  $color-orange;
+  }
+  .circle {
+    z-index: 1;
+    position: relative;
+    background: $white;
+    transform: scale(1);
+    animation: success-anim 700ms ease;
+  }
+  .circleBorder {
+    z-index: 0;
+    position: absolute;
+    background:  $color-orange;
+    transform: scale(1.1);
+    animation: circle-anim 400ms ease;
+  }
+  .f-modal-body {
+    background-color: $color-orange;
+    border-radius: 2px;
+    height: 23px;
+    left: 50%;
+    margin-left: -2px;
+    position: absolute;
+    top: 15px;
+    width: 5px;
+    z-index: 2;
+  }
+
+  .f-modal-dot {
+    background-color: $color-orange;
+    border-radius: 50%;
+    top: 2.7rem;
+    height: 6px;
+    left: 50%;
+    margin-left: -3px;
+    position: absolute;
+    width: 6px;
+    z-index: 2;
+  }
+  
+  .f-modal-icon {
+    margin-top: 50px;
+  }
+  
+  .f-modal-body::before,
+  .f-modal-body::after,
+  .f-modal-dot::before,
+  .f-modal-dot::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background:  $color-danger;
+    position: absolute;
+  }
+  
+  @keyframes success-anim {
+    0% {
+      transform: scale(0);
+    }
+    30% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes circle-anim {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  &[data-style="notify"] {
+    justify-content: flex-start;
+    padding:0;
+    .circle,
+    .circleBorder{
+      border: 1px solid $color-danger;
+      width: 25px;
+      height: 25px;
+    }
+    .f-modal-body {
+      background-color: $color-danger;
+      border-radius: 2px;
+      height: 8px;
+      left: 55%;
+      margin-left: -2px;
+      position: absolute;
+      top: 5px;
+      width: 2px;
+      z-index: 2;
+    }
+    .f-modal-dot {
+      background-color: $color-danger;
+      border-radius: 50%;
+      top: 0.9rem;
+      height: 3px;
+      left: 55%;
+      margin-left: -2px;
+      position: absolute;
+      width: 2px;
+      z-index: 2;
+    }
+    .circle {
+      transform: scale(1.1);
+    }
+    .circleBorder {
+      transform: scale(1.2);
+    }
+  }
+  
+  @include gt-phone {
+    // TODO: add specifications for devices that are greater than phones
+    // example: .content { ... }
+  }
+}

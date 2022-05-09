@@ -89,7 +89,7 @@ function HeaderNav(props) {
               </Link>
             ) : null}
 
-            {router.pathname === "/login" ? null : (
+            {router.pathname === "/login" || !login ? null : (
               <Link href="/login">
                 <a
                   onClick={clicked("Login")}

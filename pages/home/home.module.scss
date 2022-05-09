@@ -5,7 +5,6 @@
 .page__home-container {
   position: relative;
 
-
   @include gt-phone {
     // TODO: add specifications for devices that are greater than phones
     // example: .content { ... }
