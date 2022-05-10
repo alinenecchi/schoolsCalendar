@@ -51,12 +51,11 @@
 
   &[data-style="orange"] {
     width: auto;
-    height: 35px;
-    padding: 15px 25px 15px 25px;
+    height: auto;
     background-color: #FF6551;
-    border-radius: 5px;
-    gap: 0.5rem;
     border: none;
+    border-radius: 5px;
+    gap: 1rem;
 
     &:hover {
       background-color: darken(#FF6551, 10%);
@@ -68,6 +67,7 @@
       line-height: 22px;
       letter-spacing: 0.2px;
       color: $white;
+      text-transform:capitalize;
     }
 
     .arrowRight {
@@ -109,6 +109,29 @@
     .arrowRight {
       border-top: $color-primary-1 1px solid;
       border-right: $color-primary-1 1px solid;
+    }
+  }
+
+  &[data-style="transparent"] {
+    background-color: transparent;
+    border: none;
+    width: auto;
+    gap: 1rem;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    span {
+      color: #FF6551;;
+      text-transform: none;
+      font-weight: 500;
+    }
+
+    .arrowRight {
+      border-top: #FF6551 1px solid;
+      border-right:  #FF6551  1px solid;
     }
   }
 

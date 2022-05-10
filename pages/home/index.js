@@ -1,9 +1,9 @@
 import React from "react";
 import Title from "../../components/atoms/title";
-import Footer from "../../components/organisms/footer";
 import { userService } from "../../services";
 import Link from "../../components/atoms/link";
-
+import HeaderNav from "../../components/molecules/header-nav";
+import Footer from '../../components/organisms/footer';
 import css from "./home.module.scss";
 
 export default function Home(props) {
@@ -23,6 +23,9 @@ export default function Home(props) {
         </div>
       </div>
       <Footer />
+      <HeaderNav login= {false}/>
+      <div className={css.main}></div>
+      <Footer className={css.footer}/>
     </div>
   );
 }

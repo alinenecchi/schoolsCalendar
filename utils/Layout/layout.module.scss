@@ -2,13 +2,11 @@
 @import 'utils/styles/_mixins';
 
 .layout {
-  transition: all .5s linear;
+  transition: all .5s linear; 
+  height: 100vh;
 
   .main {
     transition: all .5s linear;
-    // padding: 1rem;
-    // border-radius: 10px;
-    // background: #ddd;
   }
 }
 

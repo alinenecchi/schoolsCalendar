@@ -1,0 +1,31 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+.organism__section-card-container {
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+  @include gt-phone {
+
+    .card-container {
+      flex-direction: row;
+    }
+  }
+
+  @include tablet {
+    .card-container {
+      flex-direction: column;
+    }
+  }
+}

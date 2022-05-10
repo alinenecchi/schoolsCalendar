@@ -1,0 +1,60 @@
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
+
+.molecule__card-container {
+  position: relative;
+  box-shadow: 5px 10px 13px 19px rgba(0, 0, 0, 0.10);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 329px;
+  background: #ffffff;
+
+  .title {
+    font-weight: 600;
+    color: $color-base-8;
+    padding: 0;
+    margin: 0;
+  }
+  .line {
+    padding: 15px 0 20px 0;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing:  0.2px;
+    color: $color-base-7;
+  }
+
+  &[data-style="info"] {
+    padding: 2rem;
+  }
+
+  @include gt-phone {
+    max-width: 328px;
+    gap: 1rem;
+    &[data-style="info"] {
+      height: auto;
+
+      .title {
+        height: 56px;
+      }
+      .line {
+        padding: 0;
+      }
+    }
+  
+  }
+  @include tablet {
+    width: 100%;
+    max-width: 100%;
+
+    &[data-style="info"] {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
