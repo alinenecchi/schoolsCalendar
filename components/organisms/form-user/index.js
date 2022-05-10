@@ -37,6 +37,8 @@ function FormUser(props) {
     }));
   }
 
+  console.log (111,options)
+
   function toggleOption(id, checked) {
     return options.map((option) =>
       option.id === id ? { ...option, checked } : option
@@ -46,6 +48,7 @@ function FormUser(props) {
   const changeList = (id, checked) => {
     const newCheckedList = toggleOption(id, checked);
     setCheckedList(newCheckedList);
+    console.log(222, newCheckedList)
   };
 
   function onClose() {
@@ -58,7 +61,7 @@ function FormUser(props) {
     status: "",
   });
 
-  console.log(dataCard);
+  console.log('data',dataCard);
 
   useEffect(() => {
     const isUserEmpty = Object.values(dataCard).some((x) => isEmpty(x));
@@ -89,8 +92,6 @@ function FormUser(props) {
       status: dataCard.status,
     };
 
-    console.log(data);
-
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -115,7 +116,8 @@ function FormUser(props) {
       .catch((error) => {
         setState("error");
         console.error("There was an error!", error);
-        router.push('/home');
+        //router.push('/home');
+        router.push(`/home/${dataCard.status}`)
       });
   };
 
@@ -161,7 +163,7 @@ function FormUser(props) {
                       <input
                         type="radio"
                         name="options"
-                        value={!checked && (dataCard.status = name)}
+                        value={!!checked && (dataCard.status = name)}
                         checked={checked}
                         onChange={(e) => changeList(id, e.target.checked)}
                       />

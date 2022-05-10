@@ -1,0 +1,16 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+
+.page__aluno-container {
+  position: relative;
+
+  .main {
+    height: 450px;
+  }
+
+  @include gt-phone {
+    // TODO: add specifications for devices that are greater than phones
+    // example: .content { ... }
+  }
+}
