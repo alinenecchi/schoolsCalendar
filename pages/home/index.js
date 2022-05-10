@@ -9,6 +9,7 @@ export default function Home(props) {
   return (
     <div className={`${css["page__home-container"]} ${className}`} {...other}>
       <HeaderNav login= {false}/>
+      <div className={css.main}></div>
       <Footer className={css.footer}/>
     </div>
   );
