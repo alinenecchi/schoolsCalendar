@@ -1,10 +1,8 @@
 import React from "react";
 import HeaderNav from "../../../components/molecules/header-nav";
 import Footer from "../../../components/organisms/footer";
-import Create from "../../../components/utils/create";
-import Read from "../../../components/utils/read";
-import Update from "../../../components/utils/update";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Container } from "semantic-ui-react";
+import ContactView from "../../../views/contact-view";
 import css from "./professor.module.scss";
 
 export default function Professor(props) {
@@ -17,19 +15,9 @@ export default function Professor(props) {
     >
       <HeaderNav login={false} />
       <div className={css.main}>
-        <Router>
-          <div className="main">
-            <h2 className="main-header">React Crud Operations</h2>
-            <div>
-              <Route exact path="/create" component={Create} />
-            </div>
-            <div style={{ marginTop: 20 }}>
-              <Route exact path="/read" component={Read} />
-            </div>
-
-            <Route path="/update" component={Update} />
-          </div>
-        </Router>
+        <Container>
+          <ContactView />
+        </Container>
       </div>
       <Footer className={css.footer} />
     </div>
