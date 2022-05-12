@@ -1,5 +1,15 @@
-import React from "react";
+import React, { useState }from "react";
 import * as pageData from "../data/main";
+// import { firestore } from "../firebase/clientApp";
+// import {
+//   collection,
+//   QueryDocumentSnapshot,
+//   DocumentData,
+//   query,
+//   where,
+//   limit,
+//   getDocs,
+// } from "@firebase/firestore";
 import Hero from "../components/molecules/hero";
 import css from "./index.module.scss";
 import SectionCard from "../components/organisms/section-card";
@@ -37,3 +47,32 @@ export default function Home(props) {
     </div>
   );
 }
+
+// const todosCollection = collection(firestore, "todos");
+// const [todos, setTodos] =
+//   useState < QueryDocumentSnapshot < DocumentData > [] > [];
+// const [loading, setLoading] = useState < boolean > true;
+
+// const getTodos = async () => {
+//   // construct a query to get up to 10 undone todos 
+//   const todosQuery = query(todosCollection,where('done','==',false),limit(10));
+//   // get the todos
+//   const querySnapshot = await getDocs(todosQuery);
+  
+//   // map through todos adding them to an array
+//   const result = useState < QueryDocumentSnapshot< DocumentData >[] > [];
+//   querySnapshot.forEach((snapshot) => {
+//   result.push(snapshot);
+//   });
+//   // set it to state
+//   setTodos(result);
+// };
+
+// useEffect( () => {
+//   // get the todos
+//   getTodos();
+//   // reset loading
+//   setTimeout( () => {
+//     setLoading(false);
+//   },2000)
+// },[]);
