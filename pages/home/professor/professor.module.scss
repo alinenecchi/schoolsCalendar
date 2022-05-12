@@ -8,6 +8,11 @@
   .main {
     height: 450px;
   }
+  .div {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
 
   @include gt-phone {
     // TODO: add specifications for devices that are greater than phones
