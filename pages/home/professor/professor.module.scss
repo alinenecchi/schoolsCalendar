@@ -6,11 +6,11 @@
   position: relative;
 
   .main {
-    height: 450px;
+    height: 100%;
   }
   .div {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 3rem;
   }
 

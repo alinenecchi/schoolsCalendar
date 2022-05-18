@@ -1,13 +1,17 @@
 import React, { useState, useContext } from "react";
-// import firebase from "../../../config/firebaseClient";
+// import firebase from "../../../services/services.ts";
+// import firebase from "../../../config/firebaseClient.ts";
 import firebase from "firebase/app";
 import css from "./create-post.module.scss";
 
 export default function CreatePost(props) {
   const { className = "", style, children, ...other } = props;
+
+  // const database = firebase.database();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-//   const [dateEvent, setDateEvent] = useState(new Date());
+  const [date, setDate] = useState(new Date());
+  const [dateEvent, setDateEvent] = useState("");
   const [notification, setNotification] = useState("");
 
   const handleSubmit = (event) => {
@@ -15,16 +19,32 @@ export default function CreatePost(props) {
     firebase.firestore().collection("Events").add({
       title: title,
       content: content,
-    //   date: dateEvent,
+      dateEvent: dateEvent,
+      date: date,
     });
     setTitle("");
     setContent("");
-    // setDateEvent(new Date()), 1000;
+    setDateEvent("");
+    setDate(new Date());
     setNotification("Evento adicionado");
     setTimeout(() => {
       setNotification("");
     }, 2000);
   };
+
+
+
+  // function handleSubmit (event) {
+  //   event.preventDefault();
+  //   const ref = database.ref('Events');
+  //   const dados = {
+  //     title,
+  //     content,
+  //     dateEvent,
+  //     date
+  //   }
+  //   ref.push(dados);
+  // }
 
   return (
     <div
@@ -34,6 +54,7 @@ export default function CreatePost(props) {
     >
       <h2>Adicionar Eventos</h2>
       {notification}
+      {/* <form onSubmit={handleSubmit}> */}
       <form onSubmit={handleSubmit}>
         <div>
           Title
@@ -41,7 +62,8 @@ export default function CreatePost(props) {
           <input
             type="text"
             value={title}
-            onChange={({ target }) => setTitle(target.value)}
+            onChange={event => setTitle(event.target.value)}
+            // onChange={({ target }) => setTitle(target.value)}
           />
         </div>
         <div>
@@ -49,18 +71,20 @@ export default function CreatePost(props) {
           <br />
           <textarea
             value={content}
-            onChange={({ target }) => setContent(target.value)}
+            onChange={event => setContent(event.target.value)}
+            // onChange={({ target }) => setContent(target.value)}
           />
         </div>
-        {/* <div>
+        <div>
           Data
           <br />
           <input
             type="date"
             value={dateEvent}
-            onChange={({ target }) => setTitle(target.value)}
+            onChange={event => setDateEvent(event.target.value)}
+            // onChange={({ target }) => setDateEvent(target.value)}
           />
-        </div> */}
+        </div>
         <button type="submit">Save</button>
       </form>
     </div>

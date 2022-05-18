@@ -1,11 +1,7 @@
-import React, { useState, useContext } from "react";
-// import firebase from "../../../config/firebaseClient";
-// import db from "./firbase";
-// import db from "firbase";
+import React, { useState, useEffect} from "react";
 import firebase from "firebase/app";
 import css from "./create-get.module.scss";
-// import firebase from "firebase/app";
-// import db from './firebase.config';
+
 
 
 
@@ -14,11 +10,9 @@ export default function CreateGet(props) {
   const [info, setInfo] = useState([]);
   console.log(2222222222,info)
 
-  // window.addEventListener("load", () => {
-  //   Fetchdata();
-  // });
-
-  // Fetch the required data using the get() method
+  useEffect(() => {
+    Fetchdata();
+  }, []);
   
   const Fetchdata = async () => {
       firebase
@@ -33,24 +27,21 @@ export default function CreateGet(props) {
       });
   };
 
-  // Display the result on the page
-
   return (
     <div
-      className={`${css["organism__create-post-container"]} ${className}`}
+      className={`${css["organism__create-get-container"]} ${className}`}
       data-style={style}
       {...other}
     >
-      <div>
-          <h2>Eventos</h2>
+      <div  className={css["card-container"]}>
+        <h2>Eventos</h2>
         {info.map((data) => (
           <>
           <p>Título: {data.title}</p>
-
           <p>Descrição: {data.content}</p>
+          <p>Data: {data.dateEvent}</p>
           </>
         ))}
-        <button onClick={Fetchdata}>Ver mais</button>
       </div>
     </div>
   );

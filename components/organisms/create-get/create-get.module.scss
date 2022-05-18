@@ -2,5 +2,11 @@
 @import "utils/styles/_mixins";
 
 .organism__create-get-container {
-    position: relative;
+  position: relative;
+  height: auto;
+  max-height: 30rem;
+  overflow: auto;
+  .container {
+    display: flex;
+  }
 }
