@@ -14,7 +14,15 @@
     margin-top: -5rem;
     z-index: 2;
   }
-  
+  .sectionApi {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 10px 13px 19px rgb(0 0 0 / 10%);
+    padding: 2.5rem;
+    border: 1px solid red;
+    max-width: 500px;
+  }
   @include gt-phone {
     .sectionCard {
       z-index: 2;

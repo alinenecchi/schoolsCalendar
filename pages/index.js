@@ -1,15 +1,6 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import * as pageData from "../data/main";
-// import { firestore } from "../firebase/clientApp";
-// import {
-//   collection,
-//   QueryDocumentSnapshot,
-//   DocumentData,
-//   query,
-//   where,
-//   limit,
-//   getDocs,
-// } from "@firebase/firestore";
+import axios from "axios";
 import Hero from "../components/molecules/hero";
 import css from "./index.module.scss";
 import SectionCard from "../components/organisms/section-card";
@@ -17,10 +8,21 @@ import SectionWhoWeAre from "../components/organisms/section-who-we-are";
 import SectionInfo from "../components/organisms/section-info";
 import SectionContactUs from "../components/organisms/section-contact-us";
 import HeaderNav from "../components/molecules/header-nav";
-import Footer from "../components/organisms/footer";
 
 export default function Home(props) {
-  const { className = "", children, sectionHero, ...other } = props;
+  const {
+    className = "",
+    children,
+    sectionHero,
+    // dados,
+    dadosCalendar,
+    ...other
+  } = props;
+  // console.log("dadosProps", dados);
+  console.log("dadosCalendar", dadosCalendar);
+  console.log("dadosCalendarMonth", dadosCalendar.monthsOfTheYear);
+
+
 
   return (
     <div className={`${css["page__home-container"]} ${className}`} {...other}>
@@ -33,6 +35,17 @@ export default function Home(props) {
         </div>
       </Hero>
 
+      <div className={css.sectionApi}>
+        <h1> CONSUMINDO DADOS API CALENDAR</h1>
+      <h2> year : {dadosCalendar.year}</h2>
+        {dadosCalendar.monthsOfTheYear.map((dado) => (
+          <>
+          <p>monthNumber: {dado.monthNumber}</p>
+          <p>startOfTheMonth : {dado.startOfTheMonth}</p>
+          </>
+        ))}
+      </div>
+
       <SectionCard className={css.sectionCard} dataCard={pageData.dataCard} />
       <SectionWhoWeAre
         className={css.sectionWhoWeAre}
@@ -43,36 +56,23 @@ export default function Home(props) {
         className={css.sectionContact}
         dataContact={pageData.dataContact}
       />
-      <Footer />
     </div>
   );
 }
 
-// const todosCollection = collection(firestore, "todos");
-// const [todos, setTodos] =
-//   useState < QueryDocumentSnapshot < DocumentData > [] > [];
-// const [loading, setLoading] = useState < boolean > true;
+export async function getStaticProps(context) {
+  // const response = await axios.get("http://viacep.com.br/ws/90230110/json/");
+  // const dados = response.data;
 
-// const getTodos = async () => {
-//   // construct a query to get up to 10 undone todos 
-//   const todosQuery = query(todosCollection,where('done','==',false),limit(10));
-//   // get the todos
-//   const querySnapshot = await getDocs(todosQuery);
-  
-//   // map through todos adding them to an array
-//   const result = useState < QueryDocumentSnapshot< DocumentData >[] > [];
-//   querySnapshot.forEach((snapshot) => {
-//   result.push(snapshot);
-//   });
-//   // set it to state
-//   setTodos(result);
-// };
+  const retornoApi = await axios.get(
+    "https://schoolscalendar-heroku.herokuapp.com/api/calendar"
+  );
+  const dadosCalendar = retornoApi.data;
 
-// useEffect( () => {
-//   // get the todos
-//   getTodos();
-//   // reset loading
-//   setTimeout( () => {
-//     setLoading(false);
-//   },2000)
-// },[]);
+  return {
+    props: {
+      // dados,
+      dadosCalendar,
+    },
+  };
+}
