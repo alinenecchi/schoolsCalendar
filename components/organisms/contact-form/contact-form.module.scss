@@ -22,7 +22,7 @@
 
       .form-group {
         display: grid;
-        grid-template-columns: 0.75fr 1fr;
+        grid-template-rows: 0.75fr 1fr;
         flex-direction: row;
         width: 100%;
         gap: 1rem;
@@ -44,5 +44,30 @@
 
   @include gt-phone {
     width: 100%;
+
+    .container {
+      width: 100%;
+  
+      .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        gap: 2rem;
+        padding: 1rem;
+  
+        .form-group {
+          display: grid;
+          grid-template-columns: 0.75fr 1fr;
+          flex-direction: row;
+          width: 100%;
+          gap: 1rem;
+  
+          .input {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 }
