@@ -4,9 +4,14 @@
 
 .page__professor-container {
   position: relative;
+  background-image: url("/images/home/background.png");
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: 100% 100%;
+  height: 100%;
 
   .main {
-    height: 450px;
+    height: 100%;
   }
   .div {
     display: flex;
@@ -15,7 +20,6 @@
   }
 
   @include gt-phone {
-    // TODO: add specifications for devices that are greater than phones
-    // example: .content { ... }
+    overflow: auto;
   }
 }

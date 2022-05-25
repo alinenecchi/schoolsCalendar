@@ -8,6 +8,7 @@ export { default as Telescope } from "./Telescope";
 export { default as Blackboards } from "./Blackboards";
 export { default as Graduation } from "./Graduation";
 export { default as Line } from "./line";
+export { default as Bell } from "./bell";
 export { default as LineLarge } from "./line-large";
 export { default as Facebook } from "./facebook";
 export { default as Twitter } from "./twitter";

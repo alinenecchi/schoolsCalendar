@@ -1,9 +1,12 @@
-@import 'utils/styles/_colors';
-@import 'utils/styles/_mixins';
-
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
 
 .page__aluno-container {
   position: relative;
+  background-image: url("/images/home/background.png");
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: 100% 100%;
 
   .main {
     height: 450px;

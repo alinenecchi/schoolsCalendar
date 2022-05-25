@@ -35,16 +35,16 @@ export default function Home(props) {
         </div>
       </Hero>
 
-      <div className={css.sectionApi}>
+      {/* <div className={css.sectionApi}>
         <h1> CONSUMINDO DADOS API CALENDAR</h1>
-      <h2> year : {dadosCalendar.year}</h2>
+        <h2> year : {dadosCalendar.year}</h2>
         {dadosCalendar.monthsOfTheYear.map((dado) => (
           <>
           <p>monthNumber: {dado.monthNumber}</p>
           <p>startOfTheMonth : {dado.startOfTheMonth}</p>
           </>
         ))}
-      </div>
+      </div> */}
 
       <SectionCard className={css.sectionCard} dataCard={pageData.dataCard} />
       <SectionWhoWeAre

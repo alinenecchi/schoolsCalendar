@@ -1,0 +1,27 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+
+.page__contact-container {
+  display: flex;
+  justify-content: space-between;
+  color: $color-dark-background-6;
+  padding: 2rem;
+  overflow:visible;
+
+  .container {
+    width: 100%;
+  }
+  .title {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    text-transform: capitalize;
+    align-items: center;
+  }
+
+  @include gt-phone {
+    // TODO: add specifications for devices that are greater than phones
+    // example: .content { ... }
+  }
+}

@@ -28,8 +28,8 @@ export default function Professor(props) {
       <div className={css.main}>
         <Container>
           <div className={css.div}>
-            <CreatePost />
-            <CreateGet />
+            {/* <CreatePost />
+            <CreateGet /> */}
           </div>
           <ContactView />
         </Container>
