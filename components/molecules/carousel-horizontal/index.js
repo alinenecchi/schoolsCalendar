@@ -54,7 +54,7 @@ function CarouselHorizontal(props) {
       data-style={style}
       {...other}
     >
-      <Title>{title}</Title>
+      <Title className={css.title}>{title}</Title>
       <span className={css.text}>{text}</span>
       <div className={css.carousel}>
         {images.length > 1  &&(
