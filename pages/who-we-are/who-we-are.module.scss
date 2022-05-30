@@ -3,11 +3,11 @@
 
 .page__who-we-are-container{
   position: relative;
-
-  .title {
-    height: 100%;
-    min-height: 900px;
-    padding: 1rem;
+  width: 100%;
+  .hero {
+    .button {
+      max-width: 12rem;
+    }
   }
 
   /******************************************

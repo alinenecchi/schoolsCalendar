@@ -12,7 +12,8 @@ function Hero (props) {
   const {
     className = "",
     image = "/images/banner-hero.png",
-    LogoIcon = '',
+    text = "O colégio",
+    logo,
     style,
     children,
     ...other
@@ -32,8 +33,9 @@ function Hero (props) {
     </div>
     <div className={css["content"]}>
       <div className={css["content-container"]}>
+        <span className={css["span"]}>{text}</span>
         <div className={css["logo-container"]}>
-          logo
+          {logo}
         </div>
         <div className={css["content-text"]}>
           {children}

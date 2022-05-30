@@ -92,19 +92,21 @@
 
   &[data-style="outline"] {
     background-color: $color-primary-3;
-    border: $color-primary-1 1px solid;
+    border: #FF6551 1px solid;
+    border-radius: 5px;
 
     &:hover {
-      background-color: darken($color-primary-3, 10%);
+      background-color: darken(#FF6551, 10%);
     }
 
     span {
       color: $color-primary-1;
+      color: #FF6551;
     }
 
     .arrowRight {
-      border-top: $color-primary-1 1px solid;
-      border-right: $color-primary-1 1px solid;
+      border-top: #FF6551 1px solid;
+      border-right: #FF6551 1px solid;
     }
   }
 
@@ -123,6 +125,10 @@
       color: #FF6551;;
       text-transform: none;
       font-weight: 500;
+
+      &:hover {
+        color: $white;
+      }
     }
 
     .arrowRight {
