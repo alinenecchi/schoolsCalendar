@@ -1,0 +1,14 @@
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
+
+.page__read-view-container {
+  display: flex;
+  justify-content: space-between;
+  color: $color-dark-background-6;
+  overflow: visible;
+  padding: 1rem;
+
+  @include gt-phone {
+    padding: 2rem;
+  }
+}

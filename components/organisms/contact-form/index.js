@@ -4,6 +4,8 @@ import ButtonHorizontal from "../../molecules/button-horizontal";
 import _ from "lodash";
 import { ContactContext } from "../../../context/contact-context";
 import css from "./contact-form.module.scss";
+import Title from "../../atoms/title";
+import EventTable from "../event-table";
 
 export default function ContactForm(props) {
   const {
@@ -19,7 +21,6 @@ export default function ContactForm(props) {
   const eventName = useFormInput("");
   const description = useFormInput("");
   const date = useFormInput("");
-  // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(ContactContext);
 
   const delContact = (id) => {
@@ -96,34 +97,11 @@ export default function ContactForm(props) {
             />
           </div>
 
-          <ButtonHorizontal className={css["button"]} fluid style="orange">
-            Novo evento
+          <ButtonHorizontal className={css["button-add"]} fluid style="orange">
+            Adicionar novo evento
           </ButtonHorizontal>
         </form>
-
-        <div className={css["result"]}>
-          <Table celled striped selectable>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Id</Table.HeaderCell>
-                <Table.HeaderCell>Nome da tarefa</Table.HeaderCell>
-                <Table.HeaderCell>Data</Table.HeaderCell>
-                <Table.HeaderCell>Descrição</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>{rows}</Table.Body>
-          </Table>
-          {show && (
-            <ButtonHorizontal
-              className={css["button-remove"]}
-              style="orange"
-              disabled={!selectedId}
-              onClick={onRemoveUser}
-            >
-              Remover Evento
-            </ButtonHorizontal>
-          )}
-        </div>
+        <EventTable/>
       </div>
     </div>
   );

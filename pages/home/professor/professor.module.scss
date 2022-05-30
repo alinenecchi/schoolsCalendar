@@ -10,9 +10,6 @@
   background-size: 100% 100%;
   height: 100%;
 
-  .main {
-    height: 100%;
-  }
   .div {
     display: flex;
     flex-direction: row;
@@ -21,5 +18,9 @@
 
   @include gt-phone {
     overflow: auto;
+
+    .main {
+      min-height: 100%;
+    }
   }
 }

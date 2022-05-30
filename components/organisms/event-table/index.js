@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Segment, Table, Button, Icon } from "semantic-ui-react";
 import { ContactContext } from "../../../context/contact-context";
+import ButtonHorizontal from "../../molecules/button-horizontal";
+import Title from "../../atoms/title";
 import css from "./eventTable.module.scss";
 
 export default function EventTable(props) {
@@ -40,39 +42,38 @@ export default function EventTable(props) {
       className={`${css["organism__event-table-container"]} ${className}`}
       data-style={style}
     >
-      <Segment>
-        <Table celled striped selectable>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Id</Table.HeaderCell>
-              <Table.HeaderCell>Nome da tarefa</Table.HeaderCell>
-              <Table.HeaderCell>Data</Table.HeaderCell>
-              <Table.HeaderCell>Descrição</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>{rows}</Table.Body>
-          <Table.Footer fullWidth>
-            <Table.Row>
-              <Table.HeaderCell />
-              <Table.HeaderCell colSpan="4">
-                {show && (
-                  <Button
-                    floated="right"
-                    icon
-                    labelPosition="left"
-                    color="red"
-                    size="small"
-                    disabled={!selectedId}
-                    onClick={onRemoveUser}
-                  >
-                    <Icon name="trash" /> Remover Evento
-                  </Button>
-                )}
+      <div className={css["result"]}>
+        <Title className={css["title"]}>Lista de Eventos</Title>
+        <Table className={css["table-container"]} celled striped selectable>
+          <Table.Header className={css["table-header"]}>
+            <Table.Row className={css["table-row"]}>
+              <Table.HeaderCell className={css["table-th"]}>
+                Id
+              </Table.HeaderCell>
+              <Table.HeaderCell className={css["table-th"]}>
+                Nome da tarefa
+              </Table.HeaderCell>
+              <Table.HeaderCell className={css["table-th"]}>
+                Data
+              </Table.HeaderCell>
+              <Table.HeaderCell className={css["table-th"]}>
+                Descrição
               </Table.HeaderCell>
             </Table.Row>
-          </Table.Footer>
+          </Table.Header>
+          <Table.Body className={css["table-body"]}>{rows}</Table.Body>
         </Table>
-      </Segment>
+        {show && (
+          <ButtonHorizontal
+            className={css["button-remove"]}
+            style="orange"
+            disabled={!selectedId}
+            onClick={onRemoveUser}
+          >
+            Remover Evento
+          </ButtonHorizontal>
+        )}
+      </div>
     </div>
   );
 }

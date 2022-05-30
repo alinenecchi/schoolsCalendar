@@ -6,7 +6,6 @@
   display: flex;
   width: 100%;
   background: $white;
-  padding: 1rem;
   border-radius: 5px;
 
   .container {
@@ -32,22 +31,19 @@
         }
       }
     }
-
-    .result {
-      width: 100%;
-      padding: 1rem;
-    }
-    .button-remove {
+    .button-add {
       width: 100%;
     }
   }
 
   @include gt-phone {
     width: 100%;
+    height: auto;
+    padding: 1rem;
 
     .container {
       width: 100%;
-  
+
       .form {
         display: flex;
         flex-direction: column;
@@ -55,18 +51,21 @@
         width: 100%;
         gap: 2rem;
         padding: 1rem;
-  
+
         .form-group {
           display: grid;
           grid-template-columns: 0.75fr 1fr;
           flex-direction: row;
           width: 100%;
           gap: 1rem;
-  
+
           .input {
             width: 100%;
           }
         }
+      }
+      .button-add {
+        width: 17rem;
       }
     }
   }
