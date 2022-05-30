@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   color: $color-dark-background-6;
-  padding: 2rem;
+  padding: 1rem;
   overflow:visible;
 
   .container {
@@ -21,7 +21,6 @@
   }
 
   @include gt-phone {
-    // TODO: add specifications for devices that are greater than phones
-    // example: .content { ... }
+    padding: 2rem;
   }
 }
