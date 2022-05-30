@@ -16,18 +16,26 @@ export default function WhoWeAre(props) {
       className={`${css["page__who-we-are-container"]} ${className}`}
       {...other}
     >
-      <HeaderNav/>
-      <Hero 
-        className={css.hero} 
-        image="/images/banner-hero.png" 
-        logo='Quem Somos' 
+      <HeaderNav />
+      <Hero
+        className={css.hero}
+        image="/images/banner-hero.png"
+        logo="Quem Somos"
       >
         <span> Qualidade em educação integral</span>
-        <ButtonHorizontal   className={css.button}  style="orange">Saiba mais</ButtonHorizontal>
+        <a href="#conheça">
+          <ButtonHorizontal className={css.button} style="orange">
+            Conheça
+          </ButtonHorizontal>
+        </a>
       </Hero>
-      {/* <SectionCard className={css.sectionCard} dataCard={pageData.dataCard} /> */}
-      <CarouselHorizontal images={pageData.featuresCarousel} text={pageData.text} title={pageData.title}/>
-      <Footer/>
+      <CarouselHorizontal
+        images={pageData.featuresCarousel}
+        text={pageData.text}
+        title={pageData.title}
+      />
+      <div id='conheça'></div>
+      <Footer />
     </div>
   );
 }
