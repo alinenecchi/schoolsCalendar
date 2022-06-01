@@ -21,6 +21,7 @@ export default function WhoWeAre(props) {
         className={css.hero}
         image="/images/banner-hero.png"
         logo="Quem Somos"
+        text={"O colégio"}
       >
         <span> Qualidade em educação integral</span>
         <a href="#conheça">

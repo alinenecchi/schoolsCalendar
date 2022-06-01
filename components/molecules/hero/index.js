@@ -12,7 +12,7 @@ function Hero (props) {
   const {
     className = "",
     image = "/images/banner-hero.png",
-    text = "O colégio",
+    text,
     logo,
     style,
     children,
