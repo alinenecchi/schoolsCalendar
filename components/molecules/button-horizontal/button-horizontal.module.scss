@@ -1,5 +1,5 @@
-@import 'utils/styles/_colors';
-@import 'utils/styles/_mixins';
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
 
 .molecule__button-horizontal-container {
   position: relative;
@@ -8,12 +8,12 @@
   align-items: center;
   height: 3rem;
   width: 100%;
-  padding: .7rem 1rem;
+  padding: 0.7rem 1rem;
   text-align: left;
   cursor: pointer;
-  
+
   &[disabled] {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   &:focus {
@@ -26,8 +26,8 @@
   }
 
   .arrowRight {
-    height: .9rem;
-    width: .9rem;
+    height: 0.9rem;
+    width: 0.9rem;
     transform: rotate(45deg);
   }
 
@@ -52,18 +52,18 @@
   &[data-style="orange"] {
     width: auto;
     height: auto;
-    background-color: #FF6551;
+    background-color: #ff6551;
     border: none;
     border-radius: 5px;
     gap: 1rem;
 
     &:hover {
-      background-color: darken(#FF6551, 10%);
+      background-color: darken(#ff6551, 10%);
     }
 
     span {
       color: $color-dark-text;
-      text-transform:capitalize;
+      text-transform: capitalize;
     }
 
     .arrowRight {
@@ -92,21 +92,21 @@
 
   &[data-style="outline"] {
     background-color: $color-primary-3;
-    border: #FF6551 1px solid;
+    border: #ff6551 1px solid;
     border-radius: 5px;
 
     &:hover {
-      background-color: darken(#FF6551, 10%);
+      background-color: darken(#ff6551, 10%);
     }
 
     span {
       color: $color-primary-1;
-      color: #FF6551;
+      color: #ff6551;
     }
 
     .arrowRight {
-      border-top: #FF6551 1px solid;
-      border-right: #FF6551 1px solid;
+      border-top: #ff6551 1px solid;
+      border-right: #ff6551 1px solid;
     }
   }
 
@@ -122,18 +122,23 @@
     }
 
     span {
-      color: #FF6551;;
+      color: #ff6551;
       text-transform: none;
       font-weight: 500;
 
       &:hover {
         color: $white;
+        color: #f0b2aa;
       }
     }
 
     .arrowRight {
-      border-top: #FF6551 1px solid;
-      border-right:  #FF6551  1px solid;
+      border-top: #ff6551 1px solid;
+      border-right: #ff6551 1px solid;
+      &:hover {
+        border-top: #f0b2aa 1px solid;
+        border-right: #f0b2aa 1px solid;
+      }
     }
   }
 
@@ -166,7 +171,7 @@
     }
 
     span {
-      color: $white ;
+      color: $white;
     }
 
     .arrowRight {
