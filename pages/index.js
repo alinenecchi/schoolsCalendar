@@ -8,6 +8,7 @@ import SectionWhoWeAre from "../components/organisms/section-who-we-are";
 import SectionInfo from "../components/organisms/section-info";
 import SectionContactUs from "../components/organisms/section-contact-us";
 import HeaderNav from "../components/molecules/header-nav";
+import Footer from "../components/organisms/footer";
 
 export default function Home(props) {
   const {
@@ -56,6 +57,7 @@ export default function Home(props) {
         className={css.sectionContact}
         dataContact={pageData.dataContact}
       />
+      <Footer/>
     </div>
   );
 }

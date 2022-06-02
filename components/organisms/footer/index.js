@@ -40,13 +40,6 @@ function Footer(props) {
             <a title="Quem somos">Quem somos</a>
           </Link>
           &nbsp;
-          <Link href="/">
-            <a title="Projetos">Projetos</a>
-          </Link>
-          &nbsp;
-          <Link href="/">
-            <a title="Diferenciais">Diferenciais</a>
-          </Link>
         </div>
         <div className={css["info"]}>
           <div className={css["titleText"]}>

@@ -19,7 +19,6 @@ function HeaderNav(props) {
     children,
     style,
     whoWeAre = true,
-    Contact = true,
     Home = true,
     login = true,
     ...other
@@ -71,19 +70,6 @@ function HeaderNav(props) {
                   style={{ order: 1 }}
                 >
                   Quem somos
-                </a>
-              </Link>
-            ) : null}
-
-            {Contact ? (
-              <Link href="/contact">
-                <a
-                  onClick={clicked("Contato")}
-                  title="Contato"
-                  data-selected={router.pathname === "/contact" ? 1 : null}
-                  style={{ order: 2 }}
-                >
-                  Contato
                 </a>
               </Link>
             ) : null}

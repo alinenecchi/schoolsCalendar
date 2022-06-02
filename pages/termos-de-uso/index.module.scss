@@ -1,0 +1,61 @@
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
+
+.terms-of-use {
+  position: relative;
+  width: 100%;
+
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 2rem 5rem;
+  }
+  h1 {
+    text-align: center;
+    margin: 3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  table {
+    margin: 3rem 0;
+
+    td {
+      border: solid 1px;
+      padding: 0.5rem;
+    }
+  }
+
+  li {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    list-style:outside;
+    
+  }
+
+  div[data-last] {
+    text-align: center;
+    margin: 3rem;
+    font-size: 1rem;
+  }
+
+  div[data-content-wrapper] {
+    max-width: 50rem;
+  }
+
+    /******************************************
+   *      RESPONSIVITY (media queries)      *
+   ******************************************/
+   @include gt-phone {
+     align-items: center;
+
+    div[data-content-wrapper] {
+      max-width: 100%;
+    }
+  
+  
+  }
+}
