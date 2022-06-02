@@ -9,11 +9,17 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    padding: 2rem 5rem;
+    padding: 1rem;
   }
   h1 {
     text-align: center;
+    font-size: 20px;
+    line-height: 24px;
     margin: 3rem;
+  }
+  h2 {
+    font-size: 18px;
+    line-height: 22px;
   }
 
   p {
@@ -44,16 +50,29 @@
     max-width: 50rem;
   }
 
-    /******************************************
+  /******************************************
    *      RESPONSIVITY (media queries)      *
    ******************************************/
-   @include gt-phone {
-     align-items: center;
+  @include gt-phone {
+    align-items: center;
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      line-height: 36px;
+      margin: 3rem;
+    }
+    h2 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    .container {
+      padding: 2rem 5rem;
+    }
 
     div[data-content-wrapper] {
       max-width: 100%;
     }
-  
-  
   }
 }
