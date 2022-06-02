@@ -58,7 +58,7 @@ function HeaderNav(props) {
         <div className={css["navbar-container"]} data-content-wrapper>
           <Link href="/">
             <a title="CALENDAR-SCHOOLS" onClick={clicked("menu-logo")}>
-              Logo
+              home
             </a>
           </Link>
           <div className={css["menu-container"]}>
