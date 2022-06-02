@@ -8,10 +8,14 @@
   object-fit: cover;
   background-size: 100% 100%;
 
- 
   @include gt-phone {
     .main {
       min-height: 450px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
     }
   }
 }
