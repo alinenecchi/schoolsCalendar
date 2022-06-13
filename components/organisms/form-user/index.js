@@ -1,12 +1,11 @@
 import React, { useState, useCallback, useEffect } from "react";
 import ButtonHorizontal from "../../molecules/button-horizontal";
 import ModalConfirmation from "../../molecules/modal-confirmation";
-import { useRouter } from 'next/router';
-import Warning from '../../atoms/warning-circle';
+import { useRouter } from "next/router";
+import Warning from "../../atoms/warning-circle";
 import Loader from "../../atoms/loader";
 import css from "./FormUser.module.scss";
 import { isEmpty, omit } from "lodash";
-
 
 function FormUser(props) {
   const {
@@ -23,12 +22,13 @@ function FormUser(props) {
   const options = [
     { id: 1, name: "professor" },
     { id: 2, name: "aluno" },
+    { id: 3, name: "admin" },
   ];
   const router = useRouter();
   const [isFormIncomplete, setIsFormIncomplete] = useState(true);
   const [state, setState] = useState("default");
+  const [user, setUser] = useState("");
   const [checkedList, setCheckedList] = React.useState(uncheckAll(options));
-  console.log(checkedList);
 
   function uncheckAll(options) {
     return options.map((option) => ({
@@ -36,8 +36,6 @@ function FormUser(props) {
       checked: false,
     }));
   }
-
-  console.log (111,options)
 
   function toggleOption(id, checked) {
     return options.map((option) =>
@@ -48,7 +46,7 @@ function FormUser(props) {
   const changeList = (id, checked) => {
     const newCheckedList = toggleOption(id, checked);
     setCheckedList(newCheckedList);
-    console.log(222, newCheckedList)
+    console.log(222, newCheckedList);
   };
 
   function onClose() {
@@ -60,8 +58,6 @@ function FormUser(props) {
     password: "",
     status: "",
   });
-
-  console.log('data',dataCard);
 
   useEffect(() => {
     const isUserEmpty = Object.values(dataCard).some((x) => isEmpty(x));
@@ -106,18 +102,18 @@ function FormUser(props) {
             (data && "Erro ao atualizar os dados do login") || response.status;
           setLastError(data.message || error);
           setState("error");
-          router.push('/home');
+          router.push("/home");
           return Promise.reject(error);
         }
         setState("success");
-        router.push('/home');
-        
+        setUser(dataCard.status);
+        router.push("/home");
       })
       .catch((error) => {
         setState("error");
         console.error("There was an error!", error);
         //router.push('/home');
-        router.push(`/home/${dataCard.status}`)
+        router.push(`/home/${dataCard.status}`);
       });
   };
 
@@ -126,32 +122,25 @@ function FormUser(props) {
       className={`${css["organism__form-user-container"]} ${className}`}
       {...other}
     >
-
-{
-      state === "loading"
-        ?
+      {state === "loading" ? (
         <ModalConfirmation
           style="loader"
-          alert= {<Loader/>}
+          alert={<Loader />}
           title="Isso deve durar apenas alguns segundos."
           content="Estamos validando o envio dos dados, aguarde"
         />
-        : null
-    }
- 
-    {
-      state === "error"
-        ?
+      ) : null}
+
+      {state === "error" ? (
         <ModalConfirmation
           style="warning"
-          alert = {<Warning/>}
-          title = "Erro ao realizar o login"
-          content = "Verifique os dados e tente novamente."
+          alert={<Warning />}
+          title="Erro ao realizar o login"
+          content="Verifique os dados e tente novamente."
           onClick={onClose}
-          buttonText= {'Tentar novamente'}
+          buttonText={"Tentar novamente"}
         />
-        : null
-    }
+      ) : null}
       {state === "default" && (
         <>
           <form className={css["form"]}>

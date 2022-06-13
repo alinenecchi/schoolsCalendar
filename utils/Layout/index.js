@@ -1,13 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import HeaderNav from "../../components/molecules/header-nav";
-import Footer from "../../components/organisms/footer";
 import Transition from "./transition";
 import '../../config/firebaseClient.ts';
 import ButtonHorizontal from "../../components/molecules/button-horizontal";
 import css from "./layout.module.scss";
-// import "./index.scss";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -45,13 +42,8 @@ const Layout = ({ children }) => {
         <meta property="og:locale" content="pt-BR" />
         <title>Schools Calendar</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon2.ico" />
-        {/* <meta name="twitter:creator" content="@"> */}
-
-        {/* <meta property="og:url" content="http://euro-travel-example.com/index.htm" /> */}
-
         {isCookieConsented === "ok" ? (
           <>
-            {/* Facebook Pixel Code*/}
             <script
               dangerouslySetInnerHTML={{
                 __html: `
@@ -68,21 +60,12 @@ const Layout = ({ children }) => {
                 `,
               }}
             />
-
-            {/* End Facebook Pixel Code */}
           </>
         ) : null}
       </Head>
-      {/* <HeaderNav
-        home={router.pathname.startsWith('/home')}
-        contact={router.pathname === '/contact'}
-        whoWeAre={router.pathname === '/who-we-are'}
-        login={router.pathname === '/login'}
-      /> */}
       <Transition location={router.pathname}>
         <main className={css["main"]}>{children}</main>
       </Transition>
-      {/* <Footer/> */}
 
       {isCookieConsented === "ask" ? (
         <div className={css["cookie-notif-container"]}>

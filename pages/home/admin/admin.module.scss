@@ -1,0 +1,31 @@
+@import 'utils/styles/_colors';
+@import 'utils/styles/_mixins';
+
+
+.page__adm-container {
+  position: relative;
+  background-image: url("/images/home/background.png");
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: 100% 100%;
+  height: 100%;
+
+  .div {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 1rem;
+  }
+
+  @include gt-phone {
+    overflow: auto;
+
+    .div {
+      padding: 3rem 2rem 2rem 2rem;
+    }
+
+    .main {
+      min-height: 100%;
+    }
+  }
+}
