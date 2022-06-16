@@ -150,6 +150,7 @@ function FormUser(props) {
                   <div className={css["checked-item"]}>
                     <label key={id}>
                       <input
+                        key={id}
                         type="radio"
                         name="options"
                         value={!!checked && (dataCard.status = name)}

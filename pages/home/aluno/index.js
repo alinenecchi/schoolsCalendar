@@ -2,6 +2,7 @@ import React from "react";
 import ReadView from "../../../views/read-view";
 import HeaderNav from "../../../components/molecules/header-nav";
 import Footer from '../../../components/organisms/footer';
+import CreateGet from '../../../components/organisms/create-get';
 import css from "./aluno.module.scss";
 
 export default function Aluno(props) {
@@ -12,6 +13,7 @@ export default function Aluno(props) {
       <HeaderNav login= {false}/>
       <div className={css.main}>
       <ReadView />
+      <CreateGet/>
       </div>
       <Footer className={css.footer}/>
     </div>

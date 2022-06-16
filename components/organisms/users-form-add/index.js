@@ -6,6 +6,7 @@ import Warning from "../../atoms/warning-circle";
 import Loader from "../../atoms/loader";
 import Success from "../../atoms/success-circle";
 import css from "./contact-form.module.scss";
+import axios from "axios";
 import { isEmpty } from "lodash";
 import Title from "../../atoms/title";
 
@@ -80,21 +81,23 @@ export default function ContactForm(props) {
     [dataUsers]
   );
 
-
   const handleSubmit = (event) => {
     setState("loading");
     event.preventDefault();
 
-    const data = {
-      name: dataUsers.name,
-      password: dataUsers.password,
-      email: dataUsers.email,
-    };
-
     const requestOptions = {
       method: "POST",
-      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "name": dataUsers.name,
+        "email": dataUsers.email,
+        "password": dataUsers.password,
+      }),
     };
+
+    console.log("requestO", requestOptions);
 
     fetch(
       `https://schoolscalendar-heroku.herokuapp.com/api/${dataUsers.type}`,
@@ -133,7 +136,7 @@ export default function ContactForm(props) {
         <ModalConfirmation
           style="success"
           alert={<Success />}
-          title="O usuário foi cadastrado com sucesso"
+          title={`O usuário ${dataUsers.name} foi cadastrado com sucesso`}
           href="/"
         />
       ) : null}
@@ -142,7 +145,7 @@ export default function ContactForm(props) {
           style="warning"
           alert={<Warning />}
           title={
-            lastError ? "Falha ao cadastrar aluno" : "Falha ao cadastrar aluno"
+            lastError ? "Falha ao cadastrar usuário" : "Falha ao cadastrar usuário"
           }
           content={
             lastError ||
@@ -168,6 +171,7 @@ export default function ContactForm(props) {
                     <div className={css["checked-item"]}>
                       <label key={id}>
                         <input
+                          key={id}
                           type="radio"
                           name="options"
                           value={!!checked && (dataUsers.type = type)}
