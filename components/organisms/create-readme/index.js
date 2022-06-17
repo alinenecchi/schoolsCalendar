@@ -8,6 +8,7 @@ import Success from "../../atoms/success-circle";
 import { isEmpty, omit } from "lodash";
 import css from "./create-readme.module.scss";
 import ButtonHorizontal from "../../molecules/button-horizontal";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 export default function CreateReadme(props) {
   const {
@@ -20,11 +21,12 @@ export default function CreateReadme(props) {
   } = props;
   const [APIData, setAPIData] = useState([]);
   const [lastError, setLastError] = useState(null);
+  const isLarge = useMediaQuery("(min-width:767px)");
 
   const options = [
-    { id: 1, type: "Professor", name:"Teacher" },
+    { id: 1, type: "Professor", name: "Teacher" },
     { id: 2, type: "Estudante", name: "Student" },
-    { id: 3, type: "Admin", name:"Administrador" },
+    { id: 3, type: "Admin", name: "Administrador" },
   ];
 
   const [state, setState] = useState("default");
@@ -52,7 +54,7 @@ export default function CreateReadme(props) {
     setState("default");
   }
   function onCloseSuccess() {
-    getData()
+    getData();
   }
 
   const [optionsStatus, setOptionsStatus] = useState({
@@ -81,12 +83,9 @@ export default function CreateReadme(props) {
       setAPIData(data);
       setState("default");
     });
-
-    //.then((resp) => resp.json())
-    //.then((json) => setAPIData(json));
   };
 
-  const onDelete = async(id) => {
+  const onDelete = async (id) => {
     setState("loading");
     const url = `https://schoolscalendar-heroku.herokuapp.com/api/${optionsStatus.name}/`;
     const response = await fetch(url + id, {
@@ -95,14 +94,13 @@ export default function CreateReadme(props) {
         "Content-Type": "application/json",
       },
     })
-
-    .then(() => {
-      setState("success");
-    })
-    .catch((err) => {
-      console.error(err);
-      setState("error");
-    });
+      .then(() => {
+        setState("success");
+      })
+      .catch((err) => {
+        console.error(err);
+        setState("error");
+      });
   };
   return (
     <div
@@ -149,7 +147,11 @@ export default function CreateReadme(props) {
                       key={id}
                       type="radio"
                       name="options"
-                      value={!!checked && (optionsStatus.type = type) && (optionsStatus.name = name )}
+                      value={
+                        !!checked &&
+                        (optionsStatus.type = type) &&
+                        (optionsStatus.name = name)
+                      }
                       checked={checked}
                       onChange={(e) => changeList(id, e.target.checked)}
                     />
@@ -167,25 +169,38 @@ export default function CreateReadme(props) {
             </ButtonHorizontal>
           </div>
           <Table singleLine>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Id</Table.HeaderCell>
-                <Table.HeaderCell>Nome</Table.HeaderCell>
-                <Table.HeaderCell>E-mail</Table.HeaderCell>
-                <Table.HeaderCell>Delete</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
+            {isLarge ? (
+              <Table.Header className={css["table-header"]}>
+                <Table.Row className={css["table-row"]}>
+                  <Table.HeaderCell>Id</Table.HeaderCell>
+                  <Table.HeaderCell>Nome</Table.HeaderCell>
+                  <Table.HeaderCell>E-mail</Table.HeaderCell>
+                  <Table.HeaderCell>Delete</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
+            ) : null}
 
             <Table.Body>
               {APIData?.map((data, index) => {
                 return (
                   <>
                     <Table.Row key={index}>
-                      <Table.Cell>{data.id}</Table.Cell>
-                      <Table.Cell>{data.name}</Table.Cell>
-                      <Table.Cell>{data.email}</Table.Cell>
                       <Table.Cell>
-                        <ButtonHorizontal  style="orange" onClick={() => onDelete(data.id)}>
+                        {!isLarge ? "Id:" : null} {data.id}
+                      </Table.Cell>
+                      <Table.Cell>
+                        {" "}
+                        {!isLarge ? "Nome:" : null} {data.name}
+                      </Table.Cell>
+                      <Table.Cell>
+                        {" "}
+                        {!isLarge ? "E-mail:" : null} {data.email}
+                      </Table.Cell>
+                      <Table.Cell>
+                        <ButtonHorizontal
+                          style="orange"
+                          onClick={() => onDelete(data.id)}
+                        >
                           Delete
                         </ButtonHorizontal>
                       </Table.Cell>
