@@ -88,7 +88,7 @@ export default function CreateReadme(props) {
 
   const onDelete = async(id) => {
     setState("loading");
-    const url = "https://schoolscalendar-heroku.herokuapp.com/api/Student/";
+    const url = `https://schoolscalendar-heroku.herokuapp.com/api/${optionsStatus.name}/`;
     const response = await fetch(url + id, {
       method: "DELETE",
       headers: {
