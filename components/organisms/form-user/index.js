@@ -46,7 +46,6 @@ function FormUser(props) {
   const changeList = (id, checked) => {
     const newCheckedList = toggleOption(id, checked);
     setCheckedList(newCheckedList);
-    console.log(222, newCheckedList);
   };
 
   function onClose() {
@@ -156,6 +155,7 @@ function FormUser(props) {
                         value={!!checked && (dataCard.status = name)}
                         checked={checked}
                         onChange={(e) => changeList(id, e.target.checked)}
+                        required
                       />
                       {name}
                     </label>

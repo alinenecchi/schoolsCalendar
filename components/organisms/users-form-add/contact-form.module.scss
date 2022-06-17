@@ -4,6 +4,7 @@
 .organism__contact-form-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   width: 100%;
   background: $white;
   color: $color-dark-background-6;
@@ -49,6 +50,18 @@
       width: 100%;
       margin-bottom: 1rem;
     }
+  }
+  .button-read {
+    padding: 1rem;
+    span {
+      color: $color-dark-background-5;
+      &:hover {
+        color: $gray-gray-3;
+      }
+    }
+  }
+  .read {
+    padding: 1rem;
   }
 
   @include gt-phone {

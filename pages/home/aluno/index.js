@@ -13,7 +13,6 @@ export default function Aluno(props) {
       <HeaderNav login= {false}/>
       <div className={css.main}>
       <ReadView />
-      <CreateGet/>
       </div>
       <Footer className={css.footer}/>
     </div>

@@ -1,26 +1,34 @@
 import React, { useState, useContext } from "react";
-// import firebase from "../../../config/firebaseClient";
-// import db from "./firbase";
-// import db from "firbase";
-import firebase from "firebase/app";
 import css from "./create-get.module.scss";
-// import firebase from "firebase/app";
-// import db from './firebase.config';
 
 
-
-export default function CreateGet(props, dadosCalendar, retornoApi) {
+export default function CreateGet(props) {
   const { className = "", style, children, ...other } = props;
   const [info, setInfo] = useState([]);
-  console.log(44444444444,dadosCalendar)
-  console.log(44444444444,retornoApi)
 
+  console.log(55555555555, info);
 
+  async function fetchGet() {
 
-  //Fetch the required data using the get() method
-  
+    const data = '';
+    const Options = {
+      method: " GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const url = "https://schoolscalendar-heroku.herokuapp.com/api/Student";
+    //const retornoApi = await fetch(url, Options);
 
-  // Display the result on the page
+    await fetch(url, {
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((json) => setInfo(json));
+    
+  }
 
   return (
     <div
@@ -28,29 +36,29 @@ export default function CreateGet(props, dadosCalendar, retornoApi) {
       data-style={style}
       {...other}
     >
-
       <div>
-
+        {" "}
+        <div>
+          <button onClick={fetchGet}>Buscar</button>
+          <div className={css["card-div"]}>
+            <main className={css["card-scroll"]}>
+              {info.map((entry, index) => {
+                return (
+                  <>
+                    <div className={css["img"]}>
+                      <ul key={index} >
+                        <li>{entry.id}</li>
+                        <li>{entry.name}</li>
+                        <li>{entry.email}</li>
+                      </ul>
+                    </div>
+                  </>
+                );
+              })}
+            </main>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-
-export async function getStaticProps(context) {
-
-  const retornoApi = await get(
-    "https://schoolscalendar-heroku.herokuapp.com/api/Student"
-  );
-  const dadosCalendar = retornoApi.data;
-  console.log(retornoApi)
-
-
-
-  return {
-    props: {
-      dadosCalendar,
-      retornoApi,
-    },
-  };
-}
-

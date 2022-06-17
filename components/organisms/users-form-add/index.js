@@ -6,9 +6,9 @@ import Warning from "../../atoms/warning-circle";
 import Loader from "../../atoms/loader";
 import Success from "../../atoms/success-circle";
 import css from "./contact-form.module.scss";
-import axios from "axios";
 import { isEmpty } from "lodash";
 import Title from "../../atoms/title";
+import CreateReadme from "../create-readme";
 
 export default function ContactForm(props) {
   const {
@@ -61,6 +61,8 @@ export default function ContactForm(props) {
     type: "",
   });
 
+  const [listShow, setListShow] = useState(false);
+
   useEffect(() => {
     const isUserEmpty = Object.values(dataUsers).some((x) => isEmpty(x));
 
@@ -81,6 +83,15 @@ export default function ContactForm(props) {
     [dataUsers]
   );
 
+  async function listGet() {
+    if (listShow) {
+      setListShow(false);
+    } else {
+      setListShow(true);
+    }
+    console.log(listShow);
+  }
+
   const handleSubmit = (event) => {
     setState("loading");
     event.preventDefault();
@@ -88,12 +99,12 @@ export default function ContactForm(props) {
     const requestOptions = {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "name": dataUsers.name,
-        "email": dataUsers.email,
-        "password": dataUsers.password,
+        name: dataUsers.name,
+        email: dataUsers.email,
+        password: dataUsers.password,
       }),
     };
 
@@ -145,7 +156,9 @@ export default function ContactForm(props) {
           style="warning"
           alert={<Warning />}
           title={
-            lastError ? "Falha ao cadastrar usuário" : "Falha ao cadastrar usuário"
+            lastError
+              ? "Falha ao cadastrar usuário"
+              : "Falha ao cadastrar usuário"
           }
           content={
             lastError ||
@@ -231,25 +244,16 @@ export default function ContactForm(props) {
                 disabled={isFormIncomplete}
                 type="submit"
               >
-                Adicionar estudante
+                Adicionar usuário
               </ButtonHorizontal>
             </form>
           </div>
         </>
       ) : null}
+      <ButtonHorizontal style={"transparent"}  className={css["button-read"]} onClick={listGet}>
+        Ver usuários cadastrados
+      </ButtonHorizontal>
+      {listShow ? <CreateReadme className={css["read"]} /> : null}
     </div>
   );
-}
-
-export async function getStaticProps(context) {
-  const retornoApi = await axios.get(
-    "https://schoolscalendar-heroku.herokuapp.com/api/Student"
-  );
-  const dadosCalendar = retornoApi.data;
-
-  return {
-    props: {
-      dadosCalendar,
-    },
-  };
 }

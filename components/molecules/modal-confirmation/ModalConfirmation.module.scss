@@ -1,11 +1,11 @@
-@import 'utils/styles/_colors';
-@import 'utils/styles/_mixins';
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
 
 .molecule__modal-confirmation-container {
   position: relative;
   margin: 1rem;
 
-  .container{
+  .container {
     width: 100%;
     height: auto;
     display: flex;
@@ -45,41 +45,41 @@
     }
   }
 
-  .side{
+  .side {
     width: 8px;
     background: $color-orange;
   }
   &[data-style="loader"] {
-  
-    .side{
+    .side {
       background: $color-orange;
     }
 
-    .button{
+    .button {
       display: none;
     }
   }
 
   &[data-style="success"] {
-
-    .side{
+    .side {
       background: $color-success-1;
+    }
+    .button {
+      background: $color-success-2;
+      &:hover {
+        background: $color-success-1;
+      }
     }
   }
 
   &[data-style="warning"] {
-
-    .side{
+    .side {
       background: $color-orange;
     }
   }
-  
 
   @include gt-phone {
-    .container{
-
-      .box-container{
-
+    .container {
+      .box-container {
         .title {
           font-size: 24px;
           line-height: 28px;
@@ -97,17 +97,16 @@
         }
       }
     }
-   
+
     &[data-style="loader"] {
       min-width: 50rem;
 
-      .button{
+      .button {
         display: none;
       }
     }
   }
   @include tablet {
-
     &[data-style="loader"] {
       min-width: 30rem;
     }

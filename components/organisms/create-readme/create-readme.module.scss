@@ -1,0 +1,24 @@
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
+
+.organism__create-readme-container {
+  position: relative;
+
+  .checked-item {
+    background: $white;
+    width: 100px;
+    padding: 0.3rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    label {
+      font-size: 14px;
+      color: $color-orange;
+      font-weight: 700;
+      input {
+        margin-right: 0.2rem;
+      }
+    }
+  }
+}
