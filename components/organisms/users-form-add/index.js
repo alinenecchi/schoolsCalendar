@@ -1,14 +1,21 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ButtonHorizontal from "../../molecules/button-horizontal";
-import _ from "lodash";
+
 import ModalConfirmation from "../../molecules/modal-confirmation";
+import Title from "../../atoms/title";
+import CreateReadme from "../create-readme";
 import Warning from "../../atoms/warning-circle";
 import Loader from "../../atoms/loader";
 import Success from "../../atoms/success-circle";
-import css from "./contact-form.module.scss";
+import {
+  validatePassword,
+  validateEmail,
+  validateName,
+} from "../../../utils/functions";
 import { isEmpty } from "lodash";
-import Title from "../../atoms/title";
-import CreateReadme from "../create-readme";
+import _ from "lodash";
+
+import css from "./contact-form.module.scss";
 
 export default function ContactForm(props) {
   const {
@@ -23,6 +30,9 @@ export default function ContactForm(props) {
   const [state, setState] = useState("default");
   const [isFormIncomplete, setIsFormIncomplete] = useState(true);
   const [lastError, setLastError] = useState(null);
+  const [lastErrorEmail, setLastErrorEmail] = useState(false);
+  const [lastErrorPassword, setLastErrorPassword] = useState(false);
+  const [lastErrorName, setLastErrorName] = useState(false);
 
   const options = [
     { id: 1, type: "Professor", name: "Teacher" },
@@ -62,22 +72,21 @@ export default function ContactForm(props) {
     typeName: "",
   });
 
-  const [listShow, setListShow] = useState(false);
+  console.log(dataUsers);
 
-  function validateEmail(email) {
-    var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    if (reg.test(email)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  const [listShow, setListShow] = useState(false);
 
   useEffect(() => {
     const isUserEmpty = Object.values(dataUsers).some((x) => isEmpty(x));
     const isValidEmail = validateEmail(dataUsers.email);
+    const isValidPassword = validatePassword(dataUsers.password);
+    const isValidName = validateName(dataUsers.name);
 
-    if (isUserEmpty || !isValidEmail) {
+    isValidPassword ? setLastErrorPassword(false) : setLastErrorPassword(true);
+    isValidEmail ? setLastErrorEmail(false) : setLastErrorEmail(true);
+    isValidName ? setLastErrorName(false) : setLastErrorName(true);
+
+    if (isUserEmpty || !isValidEmail || !isValidPassword || !isValidName) {
       setIsFormIncomplete(true);
     } else {
       setIsFormIncomplete(false);
@@ -100,7 +109,6 @@ export default function ContactForm(props) {
     } else {
       setListShow(true);
     }
-    console.log(listShow);
   }
 
   const handleSubmit = (event) => {
@@ -134,6 +142,13 @@ export default function ContactForm(props) {
           return Promise.reject(error);
         }
         setState("success");
+        setDataUsers({
+          name: "",
+          password: "",
+          email: "",
+          type: "",
+          typeName: "",
+        });
       })
       .catch((error) => {
         setState("error");
@@ -218,13 +233,23 @@ export default function ContactForm(props) {
                 <label>Nome do Usuário:</label>
                 <input
                   className={css["input"]}
-                  placeholder="Nome do estudante"
+                  placeholder="Nome e sobrenome do usuário"
                   type="text"
                   name="name"
                   value={dataUsers.name}
                   onChange={handleChange}
                   required
                 />
+                {lastErrorName && (
+                  <>
+                    <span></span>
+                    <span className={css["error-message"]}>
+                      Digite nome e sobrenome. O nome deve conter no mínimo 3
+                      caracteres. O sobrenome deve conter no mínimo 3
+                      caracteres. Não pode conter números.
+                    </span>
+                  </>
+                )}
               </div>
 
               <div className={css["form-group"]}>
@@ -238,6 +263,18 @@ export default function ContactForm(props) {
                   onChange={handleChange}
                   required
                 />
+
+                {lastErrorPassword && (
+                  <>
+                    <span></span>
+                    <span className={css["error-message"]}>
+                      A senha deve ter tamanho mínimo 6 e no máximo 15
+                      caracteres, letras e numero e caractere especial(!#@$%&).
+                      No mínimo uma letra maiúscula e minúscula, um numero, um
+                      caractere especial(!#@$%&).
+                    </span>
+                  </>
+                )}
               </div>
               <div className={css["form-group"]}>
                 <label>Email do usuário:</label>
@@ -250,6 +287,14 @@ export default function ContactForm(props) {
                   value={dataUsers.email}
                   onChange={handleChange}
                 />
+                {lastErrorEmail && (
+                  <>
+                    <span></span>
+                    <span className={css["error-message"]}>
+                      Digite um email válido.
+                    </span>
+                  </>
+                )}
               </div>
 
               <ButtonHorizontal

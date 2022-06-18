@@ -13,7 +13,7 @@
     width: 100%;
     align-items: center;
     .form {
-      margin: 7.5rem 0 7.5rem 0;
+      margin: 1rem;
     }
   }
   .column2 {
@@ -34,6 +34,9 @@
       background-repeat: no-repeat;
       object-fit: cover;
       background-size: 100% 100%;
+      .form {
+        margin: 7.5rem 0 7.5rem 0;
+      }
     }
     .column2 {
       display: flex;

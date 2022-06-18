@@ -35,7 +35,7 @@
       gap: 2rem;
       padding: 1rem;
 
-      .checked{
+      .checked {
         .checked-item {
           background: $white;
           width: 100px;
@@ -63,6 +63,11 @@
 
         .input {
           width: 100%;
+        }
+        .error-message {
+          font-size: 12px;
+          color: $color-dark-danger;
+          margin-top: -1.5rem;
         }
       }
     }
@@ -114,6 +119,10 @@
           flex-direction: row;
           width: 100%;
           gap: 1rem;
+
+          .error-message {
+            margin-top: -0.5rem;
+          }
 
           .input {
             width: 100%;

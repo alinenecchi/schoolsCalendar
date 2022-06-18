@@ -4,8 +4,10 @@ import ModalConfirmation from "../../molecules/modal-confirmation";
 import { useRouter } from "next/router";
 import Warning from "../../atoms/warning-circle";
 import Loader from "../../atoms/loader";
+import { validatePassword, validateEmail } from "../../../utils/functions";
 import css from "./FormUser.module.scss";
 import { isEmpty, omit } from "lodash";
+import Title from "../../atoms/title";
 
 function FormUser(props) {
   const {
@@ -29,6 +31,8 @@ function FormUser(props) {
   const [state, setState] = useState("default");
   const [user, setUser] = useState("");
   const [checkedList, setCheckedList] = React.useState(uncheckAll(options));
+  const [lastErrorEmail, setLastErrorEmail] = useState(false);
+  const [lastErrorPassword, setLastErrorPassword] = useState(false);
 
   function uncheckAll(options) {
     return options.map((option) => ({
@@ -58,19 +62,15 @@ function FormUser(props) {
     status: "",
   });
 
-  function validateEmail(email) {
-    var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    if (reg.test(email)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   useEffect(() => {
     const isUserEmpty = Object.values(dataCard).some((x) => isEmpty(x));
     const isValidEmail = validateEmail(dataCard.email);
-    if (isUserEmpty || !isValidEmail) {
+    const isValidPassword = validatePassword(dataCard.password);
+
+    isValidPassword ? setLastErrorPassword(false) : setLastErrorPassword(true);
+    isValidEmail ? setLastErrorEmail(false) : setLastErrorEmail(true);
+
+    if (isUserEmpty || !isValidEmail || !isValidPassword) {
       setIsFormIncomplete(true);
     } else {
       setIsFormIncomplete(false);
@@ -152,6 +152,7 @@ function FormUser(props) {
       ) : null}
       {state === "default" && (
         <>
+        <Title level="2">Faça o login:</Title>
           <form className={css["form"]}>
             <div className={css["checked"]}>
               {checkedList.map(({ id, name, checked }) => (
@@ -184,6 +185,14 @@ function FormUser(props) {
               value={dataCard.email}
               onChange={handleChange}
             />
+            {lastErrorEmail && (
+              <>
+                <span></span>
+                <span className={css["error-message"]}>
+                  Digite um email válido.
+                </span>
+              </>
+            )}
 
             <input
               required
@@ -196,6 +205,17 @@ function FormUser(props) {
               value={dataCard.password}
               onChange={handleChange}
             />
+            {lastErrorPassword && (
+              <>
+                <span></span>
+                <span className={css["error-message"]}>
+                  A senha deve ter tamanho mínimo 6 e no máximo 15 caracteres,
+                  letras e numero e caractere especial(!#@$%&). No mínimo uma
+                  letra maiúscula e minúscula, um numero, um caractere
+                  especial(!#@$%&).
+                </span>
+              </>
+            )}
 
             <ButtonHorizontal
               disabled={isFormIncomplete}
