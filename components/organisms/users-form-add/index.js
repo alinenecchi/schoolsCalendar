@@ -149,7 +149,8 @@ export default function ContactForm(props) {
           style="success"
           alert={<Success />}
           title={`O usuário ${dataUsers.name} foi cadastrado com sucesso`}
-          href="/"
+          onClick={onClose}
+          buttonText="Fechar"
         />
       ) : null}
       {state === "error" ? (
@@ -189,7 +190,6 @@ export default function ContactForm(props) {
                           type="radio"
                           name="options"
                           value={!!checked && (dataUsers.type = name)&& (dataUsers.typeName = type)}
-                          //value={!!checked &&  dataUsers.type}
                           checked={checked}
                           onChange={(e) => changeList(id, e.target.checked)}
                           required
