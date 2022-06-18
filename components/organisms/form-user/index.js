@@ -53,14 +53,24 @@ function FormUser(props) {
   }
 
   const [dataCard, setDataCard] = useState({
-    name: "",
+    email: "",
     password: "",
     status: "",
   });
 
+  function validateEmail(email) {
+    var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (reg.test(email)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   useEffect(() => {
     const isUserEmpty = Object.values(dataCard).some((x) => isEmpty(x));
-    if (isUserEmpty) {
+    const isValidEmail = validateEmail(dataCard.email);
+    if (isUserEmpty || !isValidEmail) {
       setIsFormIncomplete(true);
     } else {
       setIsFormIncomplete(false);
@@ -82,7 +92,7 @@ function FormUser(props) {
     event.preventDefault();
 
     const data = {
-      name: dataCard.name,
+      email: dataCard.email,
       password: dataCard.password,
       status: dataCard.status,
     };
@@ -166,13 +176,13 @@ function FormUser(props) {
 
             <input
               required
-              label="Nome"
+              label="E-mail"
               autoComplete="new-password"
-              placeholder="Nome"
+              placeholder="E-mail"
               type="text"
-              name="name"
+              name="email"
               className={css["input"]}
-              value={dataCard.name}
+              value={dataCard.email}
               onChange={handleChange}
             />
 

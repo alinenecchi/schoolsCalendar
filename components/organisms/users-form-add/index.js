@@ -64,10 +64,20 @@ export default function ContactForm(props) {
 
   const [listShow, setListShow] = useState(false);
 
+  function validateEmail(email) {
+    var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (reg.test(email)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   useEffect(() => {
     const isUserEmpty = Object.values(dataUsers).some((x) => isEmpty(x));
+    const isValidEmail = validateEmail(dataUsers.email);
 
-    if (isUserEmpty) {
+    if (isUserEmpty || !isValidEmail) {
       setIsFormIncomplete(true);
     } else {
       setIsFormIncomplete(false);
@@ -189,7 +199,11 @@ export default function ContactForm(props) {
                           key={id}
                           type="radio"
                           name="options"
-                          value={!!checked && (dataUsers.type = name)&& (dataUsers.typeName = type)}
+                          value={
+                            !!checked &&
+                            (dataUsers.type = name) &&
+                            (dataUsers.typeName = type)
+                          }
                           checked={checked}
                           onChange={(e) => changeList(id, e.target.checked)}
                           required
