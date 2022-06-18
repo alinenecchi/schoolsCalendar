@@ -177,9 +177,8 @@ function FormUser(props) {
             <input
               required
               label="E-mail"
-              autoComplete="new-password"
               placeholder="E-mail"
-              type="text"
+              type="email"
               name="email"
               className={css["input"]}
               value={dataCard.email}
