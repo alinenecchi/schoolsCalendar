@@ -25,9 +25,9 @@ export default function ContactForm(props) {
   const [lastError, setLastError] = useState(null);
 
   const options = [
-    { id: 1, type: "Teacher" },
-    { id: 2, type: "Student" },
-    { id: 3, type: "Admin" },
+    { id: 1, type: "Professor", name: "Teacher" },
+    { id: 2, type: "Estudante", name: "Student" },
+    { id: 3, type: "Admin", name: "Admin" },
   ];
 
   const [checkedList, setCheckedList] = React.useState(uncheckAll(options));
@@ -59,6 +59,7 @@ export default function ContactForm(props) {
     password: "",
     email: "",
     type: "",
+    typeName: "",
   });
 
   const [listShow, setListShow] = useState(false);
@@ -179,7 +180,7 @@ export default function ContactForm(props) {
                 <Title level="3" className={css["sub-title"]}>
                   Qual o tipo de usuário que deseja cadastrar?
                 </Title>
-                {checkedList.map(({ id, type, checked }) => (
+                {checkedList.map(({ id, type, name, checked }) => (
                   <>
                     <div className={css["checked-item"]}>
                       <label key={id}>
@@ -187,7 +188,7 @@ export default function ContactForm(props) {
                           key={id}
                           type="radio"
                           name="options"
-                          value={!!checked && (dataUsers.type = type)}
+                          value={!!checked && (dataUsers.type = name)&& (dataUsers.typeName = type)}
                           //value={!!checked &&  dataUsers.type}
                           checked={checked}
                           onChange={(e) => changeList(id, e.target.checked)}
@@ -250,7 +251,11 @@ export default function ContactForm(props) {
           </div>
         </>
       ) : null}
-      <ButtonHorizontal style={"transparent"}  className={css["button-read"]} onClick={listGet}>
+      <ButtonHorizontal
+        style={"transparent"}
+        className={css["button-read"]}
+        onClick={listGet}
+      >
         Ver usuários cadastrados
       </ButtonHorizontal>
       {listShow ? <CreateReadme className={css["read"]} /> : null}
