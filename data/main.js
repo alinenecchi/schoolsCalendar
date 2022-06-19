@@ -42,7 +42,7 @@ export const dataInfo  = {
       icon: <Blackboards />,
       title: "Calendário Escolar",
       text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
-      href: "/who-we-are",
+      href: "\images\who-we-are\img-1.jpg",
       buttonName: "Saiba mais"
     },
     {
