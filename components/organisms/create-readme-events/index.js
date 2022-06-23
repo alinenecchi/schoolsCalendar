@@ -117,7 +117,7 @@ export default function CreateReadmeEvents(props) {
                     <Table.HeaderCell>Nome do evento</Table.HeaderCell>
                     <Table.HeaderCell>Descrição</Table.HeaderCell>
                     <Table.HeaderCell>Data</Table.HeaderCell>
-                    <Table.HeaderCell>Delete</Table.HeaderCell>
+                    {show ? <Table.HeaderCell>Delete</Table.HeaderCell> : null}
                   </Table.Row>
                 </Table.Header>
               ) : null}
@@ -139,18 +139,22 @@ export default function CreateReadmeEvents(props) {
                           {!isLarge ? "Descrição da tarefa:" : null}{" "}
                           {data.description}
                         </Table.Cell>
+
                         <Table.Cell>
                           {" "}
                           {!isLarge ? "Data:" : null} {data.date}
                         </Table.Cell>
-                        <Table.Cell>
-                          <ButtonHorizontal
-                            style="orange"
-                            onClick={() => onDelete(data.id)}
-                          >
-                            Delete
-                          </ButtonHorizontal>
-                        </Table.Cell>
+
+                        {show ? (
+                          <Table.Cell>
+                            <ButtonHorizontal
+                              style="orange"
+                              onClick={() => onDelete(data.id)}
+                            >
+                              Delete
+                            </ButtonHorizontal>
+                          </Table.Cell>
+                        ) : null}
                       </Table.Row>
                     </>
                   );

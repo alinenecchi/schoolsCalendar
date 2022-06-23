@@ -2,7 +2,6 @@ import React from "react";
 import Title from "../../atoms/title";
 import Bell from "../../icons/bell";
 import EventsFormAdd from "../../organisms/events-form-add";
-import { ContactContextProvider } from "../../../context/contact-context";
 import css from "./contact.module.scss";
 
 export default function Contacts(props) {
@@ -12,17 +11,15 @@ export default function Contacts(props) {
       className={`${css["page__contact-container"]} ${className}`}
       {...other}
     >
-      <ContactContextProvider>
-        <div className={css["container"]}>
-          <div className={css["header"]}>
-            <Title className={css["title"]}>
-              <Bell className={css["icon-bell"]}/> 
-              Adicionar Eventos
-            </Title>
-          </div>
-          <EventsFormAdd/>
+      <div className={css["container"]}>
+        <div className={css["header"]}>
+          <Title className={css["title"]}>
+            <Bell className={css["icon-bell"]} />
+            Adicionar Eventos
+          </Title>
         </div>
-      </ContactContextProvider>
+        <EventsFormAdd />
+      </div>
     </div>
   );
 }
