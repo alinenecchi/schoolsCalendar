@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ButtonHorizontal from "../../molecules/button-horizontal";
-
 import ModalConfirmation from "../../molecules/modal-confirmation";
-import Title from "../../atoms/title";
-import CreateReadme from "../create-readme";
 import Warning from "../../atoms/warning-circle";
 import Loader from "../../atoms/loader";
 import Success from "../../atoms/success-circle";
-import {
-  validatePassword,
-  validateEmail,
-  validateName,
-} from "../../../utils/functions";
+import CreateReadmeEvents from "../create-readme-events";
 import { isEmpty } from "lodash";
 import _ from "lodash";
 
@@ -90,7 +83,10 @@ export default function EventsFormAdd(props) {
 
     console.log("request", requestOptions);
 
-    fetch(`https://schoolscalendar-heroku.herokuapp.com/api/task`, requestOptions)
+    fetch(
+      `https://schoolscalendar-heroku.herokuapp.com/api/task`,
+      requestOptions
+    )
       .then(async (response) => {
         const data = await response.json();
         if (!response.ok) {
@@ -206,14 +202,8 @@ export default function EventsFormAdd(props) {
           </div>
         </>
       ) : null}
-      {/* <ButtonHorizontal
-        style={"transparent"}
-        className={css["button-read"]}
-        onClick={listGet}
-      >
-        Ver usuários cadastrados
-      </ButtonHorizontal>
-      {listShow ? <CreateReadme className={css["read"]} /> : null} */}
+
+      <CreateReadmeEvents className={css["read"]} />
     </div>
   );
 }
