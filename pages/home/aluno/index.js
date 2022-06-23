@@ -12,7 +12,7 @@ export default function Aluno(props) {
     <div className={`${css["page__aluno-container"]} ${className}`} {...other}>
       <HeaderNav login= {false}/>
       <div className={css.main}>
-      <ReadView />
+      {/* <ReadView /> */}
       </div>
       <Footer className={css.footer}/>
     </div>
