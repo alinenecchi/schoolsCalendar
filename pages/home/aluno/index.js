@@ -1,5 +1,5 @@
 import React from "react";
-import ReadView from "../../../views/read-view";
+// import ReadView from "../../../views/read-view";
 import HeaderNav from "../../../components/molecules/header-nav";
 import Footer from '../../../components/organisms/footer';
 import CreateGet from '../../../components/organisms/create-get';
