@@ -9,7 +9,7 @@ export default function Contacts(props) {
       className={`${css["page__read-view-container"]} ${className}`}
       {...other}
     >
-      <CreateReadmeEvents />
+      <CreateReadmeEvents show={false}/>
     </div>
   );
 }
