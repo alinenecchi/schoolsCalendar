@@ -6,6 +6,7 @@
   justify-content: space-between;
   color: $color-dark-background-6;
   overflow: visible;
+  width: 100%;
   padding: 1rem;
 
   @include gt-phone {

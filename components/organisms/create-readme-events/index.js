@@ -30,10 +30,6 @@ export default function CreateReadmeEvents(props) {
     getData();
   }
 
-  React.useEffect(() => {
-    getData();
-  })
-
   const getData = () => {
     setState("loading");
     const url = `https://schoolscalendar-heroku.herokuapp.com/api/task`;
@@ -108,58 +104,61 @@ export default function CreateReadmeEvents(props) {
       ) : null}
       {state === "default" && (
         <>
-         <div className={css["result"]}>
-        <Title className={css["title"]}>Lista de Eventos</Title>
-          <Table singleLine>
-            {isLarge ? (
-              <Table.Header className={css["table-header"]}>
-                <Table.Row className={css["table-row"]}>
-                  <Table.HeaderCell>Id do evento</Table.HeaderCell>
-                  <Table.HeaderCell>Nome do evento</Table.HeaderCell>
-                  <Table.HeaderCell>Descrição</Table.HeaderCell>
-                  <Table.HeaderCell>Data</Table.HeaderCell>
-                  <Table.HeaderCell>Delete</Table.HeaderCell>
-                </Table.Row>
-              </Table.Header>
-            ) : null}
+          <div className={css["result"]}>
+            <Title className={css["title"]}>Lista de Eventos</Title>
+            <ButtonHorizontal style="transparent" onClick={getData}>
+              Ver Lista
+            </ButtonHorizontal>
+            <Table singleLine>
+              {isLarge ? (
+                <Table.Header className={css["table-header"]}>
+                  <Table.Row className={css["table-row"]}>
+                    <Table.HeaderCell>Id do evento</Table.HeaderCell>
+                    <Table.HeaderCell>Nome do evento</Table.HeaderCell>
+                    <Table.HeaderCell>Descrição</Table.HeaderCell>
+                    <Table.HeaderCell>Data</Table.HeaderCell>
+                    <Table.HeaderCell>Delete</Table.HeaderCell>
+                  </Table.Row>
+                </Table.Header>
+              ) : null}
 
-            <Table.Body>
-              {APIData?.map((data, index) => {
-                return (
-                  <>
-                    <Table.Row key={index}>
-                      <Table.Cell>
-                        {!isLarge ? "Id:" : null} {data.id}
-                      </Table.Cell>
-                      <Table.Cell>
-                        {" "}
-                        {!isLarge ? "Nome da tarefa:" : null} {data.name}
-                      </Table.Cell>
-                      <Table.Cell>
-                        {" "}
-                        {!isLarge ? "Descrição da tarefa:" : null} {data.description}
-                      </Table.Cell>
-                      <Table.Cell>
-                        {" "}
-                        {!isLarge ? "Data:" : null} {data.date}
-                      </Table.Cell>
-                      <Table.Cell>
-                        <ButtonHorizontal
-                          style="orange"
-                          onClick={() => onDelete(data.id)}
-                        >
-                          Delete
-                        </ButtonHorizontal>
-                      </Table.Cell>
-                    </Table.Row>
-                  </>
-                );
-              })}
-            </Table.Body>
-          </Table>
+              <Table.Body>
+                {APIData?.map((data, index) => {
+                  return (
+                    <>
+                      <Table.Row key={index}>
+                        <Table.Cell>
+                          {!isLarge ? "Id:" : null} {data.id}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {" "}
+                          {!isLarge ? "Nome da tarefa:" : null} {data.name}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {" "}
+                          {!isLarge ? "Descrição da tarefa:" : null}{" "}
+                          {data.description}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {" "}
+                          {!isLarge ? "Data:" : null} {data.date}
+                        </Table.Cell>
+                        <Table.Cell>
+                          <ButtonHorizontal
+                            style="orange"
+                            onClick={() => onDelete(data.id)}
+                          >
+                            Delete
+                          </ButtonHorizontal>
+                        </Table.Cell>
+                      </Table.Row>
+                    </>
+                  );
+                })}
+              </Table.Body>
+            </Table>
           </div>
         </>
-
       )}
     </div>
   );
