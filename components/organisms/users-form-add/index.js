@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ButtonHorizontal from "../../molecules/button-horizontal";
-
 import ModalConfirmation from "../../molecules/modal-confirmation";
 import Title from "../../atoms/title";
 import CreateReadme from "../create-readme";
@@ -71,8 +70,6 @@ export default function UsersFormAdd(props) {
     type: "",
     typeName: "",
   });
-
-  console.log(dataUsers);
 
   const [listShow, setListShow] = useState(false);
 

@@ -35,26 +35,6 @@
       gap: 2rem;
       padding: 1rem;
 
-      .checked {
-        .checked-item {
-          background: $white;
-          width: 100px;
-          padding: 0.3rem;
-          border-radius: 5px;
-          display: flex;
-          justify-content: flex-start;
-          gap: 1rem;
-          label {
-            font-size: 14px;
-            color: $color-orange;
-            font-weight: 700;
-            input {
-              margin-right: 0.2rem;
-            }
-          }
-        }
-      }
-
       .form-group {
         display: grid;
         flex-direction: row;
@@ -77,6 +57,7 @@
     }
   }
   .button-read {
+    width: 17rem;
     padding: 1rem;
     span {
       color: $color-dark-background-5;

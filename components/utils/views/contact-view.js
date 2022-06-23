@@ -1,9 +1,6 @@
 import React from "react";
-import { Segment } from "semantic-ui-react";
 import Title from "../../atoms/title";
 import Bell from "../../icons/bell";
-import ContactForm from "../../organisms/contact-form";
-import ContactTable from "../../organisms/event-table";
 import EventsFormAdd from "../../organisms/events-form-add";
 import { ContactContextProvider } from "../../../context/contact-context";
 import css from "./contact.module.scss";
