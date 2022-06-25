@@ -34,22 +34,22 @@ export const dataInfo  = {
     {
       icon: <Graduation />,
       title: "Matrículas",
-      text: "O Colégio quer ter a satisfação de participar da formação do seu filho. Por isso, informa que as Matrículas 2023 já estão disponíveis. Agende uma visita e venha compartilhar conosco um ano de muitas conquistas! ",
-      href: "/who-we-are",
+      text: "Para saber mais sobre o processo de matrícula e rematrícula, favor clicar abaixo.",
+      href: "/images/Volta às aulas.jpg",
       buttonName: "Saiba mais"
     },
     {
       icon: <Blackboards />,
       title: "Calendário Escolar",
-      text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
-      href: "/documents/CALENDÁRIO-2022.pdf", 
+      text: "Para saber mais sobre as datas gerais e férias, favor clicar abaixo.",
+      href: "/images/Calendário Anual.jpg", 
       buttonName: "Saiba mais"
     },
     {
       icon: <Telescope />,
       title: "Lista de Materiais Escolar",
-      text: "O acúmulo gradativo de informações sobre átomos e comportamento em pequena escala...",
-      href: "/who-we-are",
+      text: "Para saber mais sobre o processo de matrícula e rematrícula, favor clicar abaixo.",
+      href: "/images/Lista Material Escolar.jpg",
       buttonName: "Saiba mais"
     },
   ]
