@@ -14,8 +14,7 @@
 
   @include gt-phone {
     .main {
-      //min-height: 450px;
-      height: 100vh;
+      min-height: 500px;
       display: flex;
       justify-content: center;
       align-content: center;
