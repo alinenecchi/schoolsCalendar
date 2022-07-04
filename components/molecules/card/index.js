@@ -4,7 +4,7 @@ import Line from "../../icons/line";
 import css from "./card.module.scss";
 
 function Card(props) {
-  const { className = "", children, icon, title, style, text, ...other } = props;
+  const { className = "", children, icon, title, style, text, text2, ...other } = props;
 
   return (
     <div
@@ -20,6 +20,7 @@ function Card(props) {
         <Line />
       </div>
       <span className={css["text"]}>{text}</span>
+      <span className={css["text2"]}>{text2}</span>
       {children}
     </div>
   );
