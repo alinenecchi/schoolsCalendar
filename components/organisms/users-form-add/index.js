@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ButtonHorizontal from "../../molecules/button-horizontal";
-
 import ModalConfirmation from "../../molecules/modal-confirmation";
 import Title from "../../atoms/title";
 import CreateReadme from "../create-readme";
@@ -15,9 +14,9 @@ import {
 import { isEmpty } from "lodash";
 import _ from "lodash";
 
-import css from "./contact-form.module.scss";
+import css from "./users-form-add.module.scss";
 
-export default function ContactForm(props) {
+export default function UsersFormAdd(props) {
   const {
     className = "",
     children,
@@ -71,8 +70,6 @@ export default function ContactForm(props) {
     type: "",
     typeName: "",
   });
-
-  console.log(dataUsers);
 
   const [listShow, setListShow] = useState(false);
 
@@ -158,7 +155,7 @@ export default function ContactForm(props) {
 
   return (
     <div
-      className={`${css["organism__contact-form-container"]} ${className}`}
+      className={`${css["organism__user-form-add-container"]} ${className}`}
       {...other}
     >
       {state === "loading" ? (

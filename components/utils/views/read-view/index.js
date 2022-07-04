@@ -1,6 +1,5 @@
 import React from "react";
-import EventTable from "../../components/organisms/event-table";
-import { ContactContextProvider } from "../../context/contact-context";
+import CreateReadmeEvents from "../../../organisms/create-readme-events";
 import css from "./read-view.module.scss";
 
 export default function Contacts(props) {
@@ -10,9 +9,7 @@ export default function Contacts(props) {
       className={`${css["page__read-view-container"]} ${className}`}
       {...other}
     >
-      <ContactContextProvider>
-        <EventTable show={false} />
-      </ContactContextProvider>
+      <CreateReadmeEvents />
     </div>
   );
 }

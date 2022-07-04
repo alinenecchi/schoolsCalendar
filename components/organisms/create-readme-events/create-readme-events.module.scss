@@ -1,0 +1,38 @@
+@import "utils/styles/_colors";
+@import "utils/styles/_mixins";
+
+.organism__create-readme-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background: $white;
+  border-radius: 5px;
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      text-transform: capitalize;
+      align-items: center;
+    }
+  }
+  @include gt-phone {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+
+    .result {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+}
