@@ -91,10 +91,11 @@ function FormUser(props) {
     setState("loading");
     event.preventDefault();
 
+
     const data = {
       email: dataCard.email,
       password: dataCard.password,
-      status: dataCard.status,
+      user: dataCard.status === 'professor' ? "Teacher" : dataCard.status,
     };
 
     const requestOptions = {
@@ -103,7 +104,7 @@ function FormUser(props) {
       body: JSON.stringify(data),
     };
 
-    fetch("/api/login", requestOptions)
+    fetch("/api/Login", requestOptions)
       .then(async (response) => {
         const data = await response.json();
         if (!response.ok) {
