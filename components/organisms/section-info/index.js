@@ -33,7 +33,7 @@ function SectionInfo(props) {
                 style="info"
               >
                 <Link href={card.href}>
-                  <a title={card.title}>
+                  <a title={card.title} target="_blank" rel="noreferrer">
                     <Button className={css["button"]} style="transparent">{card.buttonName}</Button>
                   </a>
                 </Link>
