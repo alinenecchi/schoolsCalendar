@@ -91,11 +91,13 @@ function FormUser(props) {
     setState("loading");
     event.preventDefault();
 
-
     const data = {
       email: dataCard.email,
       password: dataCard.password,
-      user: dataCard.status === 'professor' ? "Teacher" : dataCard.status,
+      isTeacher:
+        dataCard.status === "professor" || dataCard.status === "admin"
+          ? true
+          : false,
     };
 
     const requestOptions = {
@@ -104,7 +106,10 @@ function FormUser(props) {
       body: JSON.stringify(data),
     };
 
-    fetch("/api/Login", requestOptions)
+    fetch(
+      "https://schoolscalendar-heroku.herokuapp.com/api/Login",
+      requestOptions
+    )
       .then(async (response) => {
         const data = await response.json();
         if (!response.ok) {
@@ -123,7 +128,7 @@ function FormUser(props) {
       .catch((error) => {
         setState("error");
         console.error("There was an error!", error);
-        router.push('/login');
+        router.push("/login");
         //router.push(`/home/${dataCard.status}`);
       });
   };
@@ -154,7 +159,7 @@ function FormUser(props) {
       ) : null}
       {state === "default" && (
         <>
-        <Title level="2">Faça o login:</Title>
+          <Title level="2">Faça o login:</Title>
           <form className={css["form"]}>
             <div className={css["checked"]}>
               {checkedList.map(({ id, name, checked }) => (
