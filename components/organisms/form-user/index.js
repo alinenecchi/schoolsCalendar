@@ -117,13 +117,14 @@ function FormUser(props) {
         }
         setState("success");
         setUser(dataCard.status);
-        router.push("/home");
+        //router.push("/home");
+        router.push(`/home/${dataCard.status}`);
       })
       .catch((error) => {
         setState("error");
         console.error("There was an error!", error);
-        //router.push('/home');
-        router.push(`/home/${dataCard.status}`);
+        router.push('/login');
+        //router.push(`/home/${dataCard.status}`);
       });
   };
 
