@@ -120,6 +120,7 @@ function FormUser(props) {
           router.push("/home");
           return Promise.reject(error);
         }
+        console.log(data)
         setState("success");
         setUser(dataCard.status);
         //router.push("/home");

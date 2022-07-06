@@ -36,7 +36,7 @@ export default function UsersFormAdd(props) {
   const options = [
     { id: 1, type: "Professor", name: "Teacher" },
     { id: 2, type: "Estudante", name: "Student" },
-    { id: 3, type: "Admin", name: "Admin" },
+    //{ id: 3, type: "Admin", name: "Admin" },
   ];
 
   const [checkedList, setCheckedList] = React.useState(uncheckAll(options));

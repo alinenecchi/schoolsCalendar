@@ -26,7 +26,7 @@ export default function CreateReadme(props) {
   const options = [
     { id: 1, type: "Professor", name: "Teacher" },
     { id: 2, type: "Estudante", name: "Student" },
-    { id: 3, type: "Admin", name: "Administrador" },
+    //{ id: 3, type: "Admin", name: "Administrador" },
   ];
 
   const [state, setState] = useState("default");

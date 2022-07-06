@@ -1,7 +1,6 @@
 import React from "react";
 import HeaderNav from "../../../components/molecules/header-nav";
 import Footer from '../../../components/organisms/footer';
-import CreateGet from '../../../components/organisms/create-get';
 import ReadView from '../../../components/utils/views/read-view'
 import css from "./aluno.module.scss";
 
@@ -12,7 +11,7 @@ export default function Aluno(props) {
     <div className={`${css["page__aluno-container"]} ${className}`} {...other}>
       <HeaderNav login= {false}/>
       <div className={css.main}>
-      <ReadView/>
+      <ReadView show= {false} />
       </div>
       <Footer className={css.footer}/>
     </div>
